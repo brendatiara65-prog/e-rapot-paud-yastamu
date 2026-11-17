@@ -30,6 +30,15 @@
   .report-page-1 .cr-report-block{break-inside:avoid;page-break-inside:avoid;margin:6px 0}
   .report-page-1 .report-section h3{margin-bottom:6px}
 }
+
+/* Ringkasan ketercapaian TP ditampilkan dalam tabel yang rapi. */
+.cr-tp-wrap{margin:10px 0 12px;padding:9px 10px;border:1px solid #e6dce8;border-radius:9px;background:#fffdfd;break-inside:avoid;page-break-inside:avoid}
+.cr-tp-wrap h5{margin:0 0 7px;font-size:11px;font-weight:700;color:#59445f}
+.cr-tp-table{width:100%;border-collapse:collapse;font-size:10px}
+.cr-tp-table th,.cr-tp-table td{border:1px solid #e3d9e5;padding:5px 7px;vertical-align:top}
+.cr-tp-table thead th{background:#f5edf6;color:#514257;text-align:center}
+.cr-tp-table .cr-tp-no,.cr-tp-table .cr-tp-score{text-align:center;vertical-align:middle}
+@media print{.cr-tp-wrap{break-inside:avoid;page-break-inside:avoid}.cr-tp-table{font-size:9px}.cr-tp-table th,.cr-tp-table td{padding:4px 5px}}
 </style><script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script><style>
 .report-page{position:relative;background:#fff;border:5px double #3f3445;outline:1px solid #3f3445;outline-offset:-12px;padding:27px;margin:0 0 18px;min-height:275mm;color:#17121b;break-inside:avoid;page-break-inside:avoid}
 .report-page:last-child{margin-bottom:0}
@@ -701,7 +710,7 @@ function saveCurriculumReport(){if(!val('crStudent')){alert('Pilih peserta didik
 function initCR(){populateSelect('crStudent');$('crYear').value=val('filterTahun')||db.school.tahun||'';$('crSemester').value=val('filterSemester')||db.school.semester||'Semester 1';document.querySelectorAll('[data-crtab]').forEach(b=>b.addEventListener('click',()=>switchCRTab(b.dataset.crtab)));$('crStudent').addEventListener('change',()=>{crActiveTab='e1';renderCRTab()});$('crYear').addEventListener('change',()=>{crActiveTab='e1';renderCRTab()});$('crSemester').addEventListener('change',()=>{crActiveTab='e1';renderCRTab()});renderCRTab()}
 function renderCurriculumPrint(sid,year,sem){let r=db.curriculumReports.find(x=>x.studentId===sid&&x.year===year&&x.semester===sem);if(!r){$('rCurriculum').innerHTML='<p>Belum ada penilaian Kurikulum Merdeka RA untuk periode ini.</p>'; $('rGrowth').innerHTML='—';$('rTeacherNotes').textContent='—';return}
  const photoHTML=photos=>(photos||[]).filter(x=>x?.data).map(x=>`<figure><img src="${x.data}" alt="Dokumentasi kegiatan"><figcaption>${esc(x.caption||'')}</figcaption></figure>`).join('');
- $('rCurriculum').innerHTML=['e1','e2','e3'].map(k=>{let d=r.elements?.[k]||{};let title=CR_ELEMENTS[k].title;let assessed=Object.entries(d.scores||{}).filter(([i,v])=>v&&v!=='NA').map(([i,v])=>`<li>${esc(CR_ELEMENTS[k].tp[+i]||'Tujuan Pembelajaran')} — <b>${esc(v)}</b></li>`).join('');return `<div class="cr-report-block"><h4>${esc(title)}</h4><p>${esc(d.description||'Belum ada deskripsi.')}</p>${assessed?`<details><summary>Ringkasan ketercapaian TP</summary><ul>${assessed}</ul></details>`:''}<div class="cr-report-photos">${photoHTML(d.photos)}</div></div>`}).join('');
+ $('rCurriculum').innerHTML=['e1','e2','e3'].map(k=>{let d=r.elements?.[k]||{};let title=CR_ELEMENTS[k].title;let assessed=Object.entries(d.scores||{}).filter(([i,v])=>v&&v!=='NA').map(([i,v],n)=>`<tr><td class="cr-tp-no">${n+1}</td><td>${esc(CR_ELEMENTS[k].tp[+i]||'Tujuan Pembelajaran')}</td><td class="cr-tp-score"><b>${esc(v)}</b></td></tr>`).join('');return `<div class="cr-report-block"><h4>${esc(title)}</h4><p>${esc(d.description||'Belum ada deskripsi.')}</p>${assessed?`<div class="cr-tp-wrap"><h5>Ringkasan Ketercapaian TP</h5><table class="report-table cr-tp-table"><thead><tr><th style="width:8%">No.</th><th>Tujuan Pembelajaran</th><th style="width:18%">Capaian</th></tr></thead><tbody>${assessed}</tbody></table></div>`:''}<div class="cr-report-photos">${photoHTML(d.photos)}</div></div>`}).join('');
  let g=r.growth||{};$('rGrowth').innerHTML=`<table class="report-table"><tr><th>Tinggi Badan</th><th>Berat Badan</th><th>Lingkar Kepala</th></tr><tr><td>${esc(g.height||'—')} cm</td><td>${esc(g.weight||'—')} kg</td><td>${esc(g.head||'—')} cm</td></tr></table>`;$('rTeacherNotes').textContent=r.teacherNotes||'—';$('rAttendance').innerHTML=`<table class="report-table"><tr><th>Sakit</th><th>Izin</th><th>Tanpa Keterangan</th></tr><tr><td>${g.sick??0} hari</td><td>${g.permission??0} hari</td><td>${g.alpa??0} hari</td></tr></table>`;
 }
 // Extend the existing renderer and selectors without removing legacy records.
