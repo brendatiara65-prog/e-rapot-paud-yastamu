@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E-RAPOT PAUD YASTAMU</title>
+<style>
+:root{--pink:#f6c9df;--pink2:#fff0f7;--purple:#d9ccfa;--purple2:#f3edff;--blue:#d7efff;--yellow:#fff2b8;--ink:#44364f;--muted:#786b83;--line:#e7dced;--white:#fff;--green:#d9f5e4;--red:#ffe0e0}
+*{box-sizing:border-box}body{margin:0;background:#fff9fc;color:var(--ink);font:14px/1.45 system-ui,-apple-system,Segoe UI,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.top{padding:22px 25px;background:linear-gradient(110deg,var(--pink),var(--purple),var(--blue));border-bottom:5px double #8d75ad}.top h1{margin:0;font-size:clamp(22px,3vw,32px)}.top p{margin:4px 0}.app{display:grid;grid-template-columns:245px minmax(0,1fr);min-height:calc(100vh - 110px)}aside{padding:16px;background:var(--purple2);border-right:1px solid var(--line)}.nav-title{font-size:11px;letter-spacing:1px;font-weight:800;color:var(--muted);margin:10px 8px}.navbtn{width:100%;display:flex;gap:10px;align-items:center;border:0;background:transparent;color:var(--ink);padding:11px 12px;border-radius:10px;text-align:left;margin:3px 0}.navbtn:hover,.navbtn.active{background:var(--pink);font-weight:750}.content{padding:24px;min-width:0}.page{display:none}.page.active{display:block}.pagehead{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}.pagehead h2{margin:0 0 5px;font-size:24px}.sub{color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}.col-12{grid-column:span 12}.col-8{grid-column:span 8}.col-6{grid-column:span 6}.col-4{grid-column:span 4}.col-3{grid-column:span 3}.card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:17px;box-shadow:0 4px 15px #55366b0a;min-width:0}.card h3{margin:0 0 12px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:18px}.stat{padding:18px;border-radius:15px;background:white;border:1px solid var(--line);border-top:5px solid var(--purple)}.stat:nth-child(2){border-top-color:#f0a9ca}.stat:nth-child(3){border-top-color:#a8d9f5}.stat:nth-child(4){border-top-color:#eed56f}.stat .label{color:var(--muted);font-size:12px}.stat strong{display:block;font-size:29px;margin-top:7px}.field{margin-bottom:12px}.field label{display:block;font-weight:700;font-size:12px;margin:0 0 5px}.field input,.field select,.field textarea,input.control,select.control,textarea.control{width:100%;padding:10px 11px;border:1px solid #d9cde3;border-radius:9px;background:#fff;color:var(--ink);outline-color:#b99eea}.field textarea{min-height:88px;resize:vertical}.hint{font-size:12px;color:var(--muted);margin-top:4px}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.btn{border:0;border-radius:9px;padding:10px 14px;background:var(--purple);color:#342644;font-weight:750}.btn:hover{filter:brightness(.97)}.btn.pink{background:var(--pink)}.btn.blue{background:var(--blue)}.btn.yellow{background:var(--yellow)}.btn.green{background:var(--green)}.btn.red{background:var(--red)}.btn.dark{background:var(--ink);color:#fff}.btn.small{padding:6px 9px;font-size:12px}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:11px;background:#fff}table{border-collapse:collapse;width:100%;min-width:650px}th,td{padding:10px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:var(--purple2);font-size:12px;white-space:nowrap}tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:#fffafd}.empty{text-align:center;padding:25px;color:var(--muted)}.badge{display:inline-block;padding:3px 8px;border-radius:99px;background:var(--blue);font-size:11px;font-weight:800}.badge.BSB{background:var(--green)}.badge.BSH{background:var(--blue)}.badge.MB{background:var(--yellow)}.badge.BB{background:var(--red)}.progress{height:9px;border-radius:20px;background:#eee7f4;overflow:hidden}.progress span{display:block;height:100%;background:linear-gradient(90deg,#f0a9ca,#b8a3ed);width:0}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}.tabs button{border:1px solid var(--line);border-radius:8px;background:white;padding:8px 12px}.tabs button.active{background:var(--pink);font-weight:800}.notice{padding:13px 15px;border-radius:10px;background:var(--yellow);margin-bottom:15px}.danger{color:#a22}.avatar{width:44px;height:54px;object-fit:cover;border:1px solid var(--line);border-radius:5px;background:#fff}.photo-preview{width:90px;height:120px;object-fit:cover;border:1px solid var(--line);border-radius:6px;display:block;margin-top:8px}.checkrow{display:flex;gap:12px;flex-wrap:wrap}.checkrow label{font-weight:500}.checkrow input{width:auto}.report-paper{position:relative;background:white;border:5px double #3f3445;outline:1px solid #3f3445;outline-offset:-12px;padding:27px;margin-top:15px;color:#17121b}.report-paper:before{content:'✿  ❀  ✿';position:absolute;top:8px;right:20px;color:#d88bb0;font-size:17px}.report-paper:after{content:'✿  ❀  ✿';position:absolute;bottom:8px;left:20px;color:#d88bb0;font-size:17px}.report-head{text-align:center;border-bottom:5px double #222;padding:4px 0 12px;margin-bottom:16px}.report-head h2{font-size:20px;margin:4px}.report-head p{margin:2px}.report-title{text-align:center;font-weight:800;margin:15px 0}.report-section{margin-top:15px;break-inside:avoid}.report-section h3{font-size:14px;margin:0 0 8px;background:#fff3f8;padding:7px;border:1px solid #ead3e0}.report-table{min-width:0;font-size:11px}.report-table th,.report-table td{padding:7px;border:1px solid #777}.signatures{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;text-align:center;margin-top:30px;font-size:11px}.signatures .space{height:55px}.signature-name{font-weight:800;text-decoration:underline}.watermark{position:absolute;top:44%;left:15%;font-size:50px;transform:rotate(-28deg);color:#e9d9e5;opacity:.28;pointer-events:none;font-weight:900;z-index:0}.report-content{position:relative;z-index:1}.report-paper .report-table{position:relative;z-index:1}.footer{text-align:center;color:var(--muted);padding:18px;font-size:12px}.hidden{display:none!important}
+@media(max-width:900px){.app{grid-template-columns:1fr}aside{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px}.nav-title{grid-column:1/-1}.content{padding:15px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.col-8,.col-6,.col-4,.col-3{grid-column:span 12}}
+@media(max-width:500px){aside{grid-template-columns:repeat(2,minmax(0,1fr))}.top{padding:18px}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:23px}.signatures{gap:5px}}
+@media print{@page{size:A4 portrait;margin:8mm}body{background:white;font-size:10px}.top,aside,.footer,.no-print{display:none!important}.app{display:block;min-height:0}.content{padding:0}.page{display:none!important}#page-rapor{display:block!important}.pagehead{display:none!important}#reportPlaceholder{display:none!important}.report-paper{display:block!important;margin:0;padding:22px;border:5px double #111;outline:none;box-shadow:none;min-height:0;print-color-adjust:exact;-webkit-print-color-adjust:exact}.report-paper:before,.report-paper:after{color:#bb6e96}.report-head h2{font-size:18px}.report-table{font-size:9px}.report-table th,.report-table td{padding:5px}.report-section{break-inside:avoid}.signatures{margin-top:24px}.watermark{color:#ddd;opacity:.3}}
+
+#authGate{position:fixed;inset:0;z-index:99999;background:linear-gradient(135deg,#fff0f7,#f3edff,#d7efff);display:flex;align-items:center;justify-content:center;padding:18px}
+#authCard{width:min(420px,100%);background:#fff;border:1px solid #e7dced;border-radius:18px;padding:26px;box-shadow:0 12px 40px #44364f20}
+#authCard h2{margin:0 0 6px;color:#44364f}#authCard p{color:#786b83}
+#authCard label{display:block;font-weight:700;font-size:12px;margin:12px 0 5px}
+#authCard input{width:100%;padding:12px;border:1px solid #d9cde3;border-radius:9px}
+#authMessage{min-height:22px;color:#a22;font-size:13px;margin:10px 0}
+#authLogout{margin-left:auto}
+#authBar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 14px;background:#fff;border-bottom:1px solid #e7dced}
+#authBar small{color:#786b83}
+
+.cr-tp{border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0;background:#fff}.cr-tp-title{font-weight:700;margin-bottom:9px}.cr-pills{display:flex;gap:7px;flex-wrap:wrap}.cr-pills label{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);border-radius:99px;padding:7px 11px;font-size:12px;font-weight:750;cursor:pointer;background:#fff}.cr-pills input{accent-color:#8d75ad}.cr-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.cr-photo{border:1px dashed #cdbbd8;border-radius:10px;padding:10px;min-width:0}.cr-photo img{max-width:100%;width:100%;height:145px;object-fit:contain;background:#faf7fb;border-radius:7px;margin:6px 0}.cr-report-block{border:1px solid #999;padding:9px;margin:8px 0;break-inside:avoid;page-break-inside:avoid}.cr-report-block h4{margin:0 0 6px;font-size:12px}.cr-report-photos{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.cr-report-photos figure{margin:0;width:31%;font-size:9px}.cr-report-photos img{width:100%;max-height:115px;object-fit:contain;border:1px solid #aaa}.cr-report-block p{white-space:pre-wrap;margin:4px 0}.parent-reflection{padding:4px 10px}.reflection-line{height:27px;border-bottom:1px solid #888}.cr-muted{color:var(--muted);font-size:12px}
+@media(max-width:600px){.cr-photo-grid{grid-template-columns:1fr}.cr-pills label{padding:7px 9px}.tabs button{font-size:11px}}
+@media print{.report-section,.cr-report-block{break-inside:avoid;page-break-inside:avoid}.cr-report-photos img{max-height:95px}.report-paper{font-size:10px}}
+</style><script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script></head>
+<body>
+
+<div id="authGate">
+  <div id="authCard">
+    <h2>🌸 Login E-RAPOT PAUD YASTAMU</h2>
+    <p>Masuk menggunakan akun yang dibuat oleh Admin sekolah.</p>
+    <form id="authForm">
+      <label for="authEmail">Email</label>
+      <input id="authEmail" type="email" autocomplete="username" required placeholder="Email akun">
+      <label for="authPassword">Kata sandi</label>
+      <input id="authPassword" type="password" autocomplete="current-password" required placeholder="Kata sandi">
+      <div id="authMessage" role="status" aria-live="polite"></div>
+      <button id="authSubmit" class="btn pink" type="submit" style="width:100%">Masuk</button>
+    </form>
+    <p class="hint">Belum punya akun? Hubungi Admin PAUD YASTAMU. Pendaftaran mandiri tidak tersedia.</p>
+  </div>
+</div>
+
+<div id="authBar" class="hidden no-print"><strong id="authUserLabel">Akun aktif</strong><small id="authRoleLabel"></small><small id="cloudSyncStatus" aria-live="polite">Menunggu sinkronisasi</small><button id="authLogout" class="btn small red" type="button">Keluar</button></div>
+<header class="top"><h1>🌸 E-RAPOT PAUD YASTAMU</h1><p>Aplikasi Rapor Digital Pendidikan Anak Usia Dini</p><p><b>Pengembang: Brenda Tiara</b></p></header>
+<div class="app"><aside class="no-print"><div class="nav-title">MENU UTAMA</div>
+<button class="navbtn active" data-page="dashboard">🏠 Dashboard</button><button class="navbtn" data-page="sekolah">🏫 Identitas Sekolah</button><button class="navbtn" data-page="siswa">👧 Data Peserta Didik</button><button class="navbtn" data-page="orangtua">👨‍👩‍👧 Data Orang Tua/Wali</button><button class="navbtn" data-page="aspek">📚 Aspek & Narasi</button><button class="navbtn" data-page="penilaian">📝 Penilaian Kurikulum</button><button class="navbtn" data-page="hafalan">📖 Hafalan</button><button class="navbtn" data-page="kegiatan">🎨 Kegiatan</button><button class="navbtn" data-page="absensi">📅 Kehadiran</button><button class="navbtn" data-page="rapor">🖨️ Preview & Cetak Rapor</button><button class="navbtn" data-page="backup">💾 Backup Data</button>
+<div class="nav-title">PERIODE RAPOR</div><div class="field"><label>Tahun Pelajaran</label><select id="filterTahun" class="control"></select></div><div class="field"><label>Semester</label><select id="filterSemester" class="control"><option>Semester 1</option><option>Semester 2</option></select></div><div class="field"><label>Kelas</label><select id="filterKelas" class="control"><option value="">Semua kelas</option><option>Kelompok A</option><option>Kelompok B</option><option>Kelompok Bermain</option></select></div>
+</aside><main class="content">
+<section id="page-dashboard" class="page active"><div class="pagehead"><div><h2>Dashboard</h2><p class="sub">Ringkasan pekerjaan rapor pada periode terpilih.</p></div><button class="btn pink" onclick="go('siswa')">＋ Tambah Peserta Didik</button></div><div class="stats"><div class="stat"><span class="label">Peserta didik</span><strong id="statSiswa">0</strong></div><div class="stat"><span class="label">Aspek perkembangan</span><strong id="statAspek">0</strong></div><div class="stat"><span class="label">Penilaian tersimpan</span><strong id="statNilai">0</strong></div><div class="stat"><span class="label">Rapor terisi</span><strong id="statRapor">0%</strong></div></div><div class="grid"><div class="card col-8"><h3>Progres pengisian rapor</h3><p class="sub">Persentase siswa yang memiliki sekurangnya satu penilaian pada periode ini.</p><div class="progress"><span id="progressBar"></span></div><p id="progressText">Belum ada penilaian.</p><div class="tablewrap"><table><thead><tr><th>Peserta Didik</th><th>Kelas</th><th>Penilaian</th><th>Status</th></tr></thead><tbody id="dashboardTabel"></tbody></table></div></div><div class="card col-4"><h3>Alur kerja</h3><ol><li>Lengkapi identitas sekolah.</li><li>Masukkan data siswa dan orang tua.</li><li>Atur aspek serta templat narasi.</li><li>Input penilaian sesuai pengamatan.</li><li>Lengkapi hafalan, kegiatan, dan absensi.</li><li>Periksa preview lalu cetak rapor.</li></ol><div class="notice">Data tersimpan di browser perangkat ini. Unduh backup secara berkala.</div></div></div></section>
+<section id="page-sekolah" class="page"><div class="pagehead"><div><h2>Identitas Sekolah</h2><p class="sub">Informasi ini muncul pada kop dan tanda tangan rapor.</p></div></div><div class="card"><div class="grid"><div class="field col-6"><label>Nama lembaga</label><input id="schoolNama" placeholder="PAUD YASTAMU"></div><div class="field col-6"><label>NPSN (opsional)</label><input id="schoolNpsn"></div><div class="field col-6"><label>Alamat lengkap</label><input id="schoolAlamat"></div><div class="field col-3"><label>Desa/Kelurahan</label><input id="schoolDesa"></div><div class="field col-3"><label>Kecamatan</label><input id="schoolKecamatan"></div><div class="field col-4"><label>Kabupaten/Kota tanda tangan</label><input id="schoolKota"></div><div class="field col-4"><label>Tahun pelajaran</label><input id="schoolTahun" placeholder="2026/2027"></div><div class="field col-4"><label>Semester</label><select id="schoolSemester"><option>Semester 1</option><option>Semester 2</option></select></div><div class="field col-6"><label>Nama kepala sekolah</label><input id="schoolKepala"></div><div class="field col-6"><label>NIP kepala sekolah (jika ada)</label><input id="schoolNip"></div><div class="field col-6"><label>Nama guru kelas</label><input id="schoolGuru"></div><div class="field col-6"><label>Nama watermark</label><input id="schoolWatermark" placeholder="PAUD YASTAMU"></div></div><button class="btn" onclick="saveSchool()">Simpan Identitas Sekolah</button></div></section>
+<section id="page-siswa" class="page"><div class="pagehead"><div><h2>Data Peserta Didik</h2><p class="sub">Kelola identitas, foto, kelas, dan tahun pelajaran siswa.</p></div><div class="row">
+  <button class="btn yellow" onclick="resetStudentForm()">Form Baru</button>
+  <button class="btn blue" onclick="document.getElementById('excelFile').click()">Impor Excel</button><button class="btn" onclick="downloadExcelTemplate()">Unduh Templat Excel</button>
+  <input type="file" id="excelFile" accept=".xlsx,.xls" hidden onchange="importExcel(event)">
+</div></div><div class="card"><input type="hidden" id="studentId"><div class="grid"><div class="field col-4"><label>NISN</label><input id="sNisn"></div><div class="field col-4"><label>NIK (opsional)</label><input id="sNik"></div><div class="field col-4"><label>Nama lengkap *</label><input id="sNama" required></div><div class="field col-4"><label>Nama panggilan</label><input id="sPanggilan"></div><div class="field col-4"><label>Jenis kelamin</label><select id="sJk"><option value="L">Laki-laki</option><option value="P">Perempuan</option></select></div><div class="field col-4"><label>Agama</label><input id="sAgama" value="Islam"></div><div class="field col-4"><label>Tempat lahir</label><input id="sTempat"></div><div class="field col-4"><label>Tanggal lahir</label><input id="sTgl" type="date"></div><div class="field col-4"><label>Anak ke-</label><input id="sAnakKe" type="number" min="1"></div><div class="field col-4"><label>Jumlah saudara</label><input id="sSaudara" type="number" min="0"></div><div class="field col-4"><label>Status dalam keluarga</label><input id="sStatusKeluarga" placeholder="Anak kandung"></div><div class="field col-4"><label>Tanggal masuk</label><input id="sMasuk" type="date"></div><div class="field col-4"><label>Kelas</label><select id="sKelas"><option>Kelompok A</option><option>Kelompok B</option><option>Kelompok Bermain</option></select></div><div class="field col-4"><label>Guru kelas</label><input id="sGuru"></div><div class="field col-8"><label>Alamat</label><input id="sAlamat"></div><div class="field col-4"><label>Tahun pelajaran</label><input id="sTahun" placeholder="2026/2027"></div><div class="field col-6"><label>Foto siswa (maks. 1 MB)</label><input id="sFoto" type="file" accept="image/*"><img id="fotoPreview" class="photo-preview hidden" alt="Preview foto"></div></div><div class="row"><button class="btn pink" onclick="saveStudent()">Simpan Peserta Didik</button><button class="btn" onclick="resetStudentForm()">Bersihkan Form</button></div></div><div class="card" style="margin-top:15px"><div class="pagehead"><h3>Daftar Peserta Didik</h3><input id="searchStudent" class="control" style="max-width:260px" placeholder="Cari nama / NISN..."></div><div class="tablewrap"><table><thead><tr><th>Foto</th><th>Nama</th><th>NISN</th><th>Jenis Kelamin</th><th>Kelas</th><th>Tahun</th><th>Aksi</th></tr></thead><tbody id="studentsTable"></tbody></table></div></div></section>
+<section id="page-orangtua" class="page"><div class="pagehead"><div><h2>Data Orang Tua / Wali</h2><p class="sub">Pilih anak untuk mengisi data keluarga.</p></div></div><div class="card"><div class="field"><label>Peserta didik</label><select id="parentStudent" class="control"></select></div><div class="tabs"><button class="active" data-ortutab="ayah">Ayah</button><button data-ortutab="ibu">Ibu</button><button data-ortutab="wali">Wali</button></div><div id="parentForm"></div><button class="btn pink" onclick="saveParent()">Simpan Data Keluarga</button></div></section>
+<section id="page-aspek" class="page"><div class="pagehead"><div><h2>Aspek Perkembangan & Templat Narasi</h2><p class="sub">Buat aspek sendiri dan templat narasi untuk BSB, BSH, MB, serta BB.</p></div></div><div class="card"><input type="hidden" id="aspectId"><div class="field"><label>Nama aspek perkembangan</label><input id="aspectNama" placeholder="Contoh: Nilai Agama dan Budi Pekerti"></div><div class="field"><label>Keterangan aspek (opsional)</label><input id="aspectKeterangan"></div><h3>Templat narasi berdasarkan predikat</h3><p class="hint">Gunakan {nama} untuk nama anak. Contoh: {nama} menunjukkan perkembangan sangat baik dalam ...</p><div class="grid"><div class="field col-6"><label>BSB — Berkembang Sangat Baik</label><textarea id="templateBSB"></textarea></div><div class="field col-6"><label>BSH — Berkembang Sesuai Harapan</label><textarea id="templateBSH"></textarea></div><div class="field col-6"><label>MB — Mulai Berkembang</label><textarea id="templateMB"></textarea></div><div class="field col-6"><label>BB — Belum Berkembang</label><textarea id="templateBB"></textarea></div></div><button class="btn pink" onclick="saveAspect()">Simpan Aspek / Templat</button><button class="btn" onclick="resetAspectForm()">Aspek Baru</button></div><div class="card" style="margin-top:15px"><h3>Daftar Aspek</h3><div class="tablewrap"><table><thead><tr><th>Aspek</th><th>Keterangan</th><th>Templat</th><th>Aksi</th></tr></thead><tbody id="aspectsTable"></tbody></table></div></div></section>
+<section id="page-penilaian" class="page"><div class="pagehead"><div><h2>Penilaian Kurikulum Merdeka RA</h2><p class="sub">Pilih siswa, isi TP per elemen CP, tambahkan dokumentasi, lalu simpan.</p></div></div>
+<div class="card"><div class="grid"><div class="field col-6"><label>Peserta didik *</label><select id="crStudent" class="control"></select></div><div class="field col-3"><label>Tahun pelajaran</label><input id="crYear" class="control"></div><div class="field col-3"><label>Semester</label><select id="crSemester" class="control"><option>Semester 1</option><option>Semester 2</option></select></div></div>
+<div class="notice">Pilih BB, MB, BSH, BSB, atau “Tidak Dinilai” untuk setiap TP. Daftar TP awal dapat disesuaikan dengan ATP dan pembelajaran yang benar-benar dilaksanakan di lembaga.</div>
+<div class="tabs" id="crTabs"><button type="button" class="active" data-crtab="e1">Elemen 1 · Agama & Budi Pekerti</button><button type="button" data-crtab="e2">Elemen 2 · Jati Diri</button><button type="button" data-crtab="e3">Elemen 3 · Literasi & STEAM</button><button type="button" data-crtab="p5">Projek P5RA</button><button type="button" data-crtab="pelengkap">Data Pelengkap</button></div>
+<div id="crEditor"></div><div class="row" style="margin-top:15px"><button class="btn pink" type="button" onclick="saveCurriculumReport()">💾 Simpan Penilaian Siswa</button><button class="btn" type="button" onclick="loadCurriculumReport(true)">Muat Ulang Data</button></div></div>
+<div class="card" style="margin-top:15px"><h3>Catatan penggunaan</h3><p class="hint">Foto otomatis diperkecil sebelum disimpan (lebar maksimum 600 piksel, JPEG sekitar 0,7). Maksimal dua foto untuk setiap elemen dan projek. Pastikan foto yang diunggah memang dokumentasi kegiatan peserta didik.</p></div></section><section id="page-hafalan" class="page"><div class="pagehead"><div><h2>Hafalan Surah, Doa, dan Hadits</h2><p class="sub">Catat capaian hafalan serta kelancaran dan makhraj.</p></div></div><div class="card"><input type="hidden" id="hafalanId"><div class="grid"><div class="field col-4"><label>Peserta didik</label><select id="hStudent" class="control"></select></div><div class="field col-4"><label>Jenis</label><select id="hJenis"><option>Surah</option><option>Doa</option><option>Hadits</option></select></div><div class="field col-4"><label>Nama hafalan</label><input id="hNama" placeholder="Surah Al-Ikhlas"></div><div class="field col-4"><label>Predikat</label><select id="hPredikat"><option>BSB</option><option>BSH</option><option>MB</option><option>BB</option></select></div><div class="field col-8"><label>Catatan kelancaran / makhraj</label><input id="hCatatan"></div></div><div class="row"><button class="btn pink" onclick="saveHafalan()">Simpan Hafalan</button><button class="btn" onclick="resetHafalanForm()">Bersihkan</button></div></div><div class="card" style="margin-top:15px"><div class="tablewrap"><table><thead><tr><th>Anak</th><th>Jenis</th><th>Hafalan</th><th>Predikat</th><th>Catatan</th><th>Aksi</th></tr></thead><tbody id="hafalanTable"></tbody></table></div></div></section>
+<section id="page-kegiatan" class="page"><div class="pagehead"><div><h2>Kegiatan / Ekstrakurikuler</h2><p class="sub">Catat kegiatan yang diikuti peserta didik.</p></div></div><div class="card"><input type="hidden" id="kegiatanId"><div class="grid"><div class="field col-4"><label>Peserta didik</label><select id="kStudent" class="control"></select></div><div class="field col-4"><label>Nama kegiatan</label><input id="kNama" placeholder="Menari, menggambar, dll."></div><div class="field col-4"><label>Keikutsertaan</label><select id="kStatus"><option>IKUT</option><option>TIDAK IKUT</option></select></div><div class="field col-12"><label>Keterangan</label><textarea id="kCatatan"></textarea></div></div><button class="btn pink" onclick="saveActivity()">Simpan Kegiatan</button></div><div class="card" style="margin-top:15px"><div class="tablewrap"><table><thead><tr><th>Anak</th><th>Kegiatan</th><th>Status</th><th>Keterangan</th><th>Aksi</th></tr></thead><tbody id="activitiesTable"></tbody></table></div></div></section>
+<section id="page-absensi" class="page"><div class="pagehead"><div><h2>Rekap Kehadiran</h2><p class="sub">Masukkan jumlah hari sakit, izin, dan tanpa keterangan.</p></div></div><div class="card"><div class="grid"><div class="field col-4"><label>Peserta didik</label><select id="attStudent" class="control"></select></div><div class="field col-4"><label>Sakit (hari)</label><input id="attSakit" type="number" min="0" value="0"></div><div class="field col-4"><label>Izin (hari)</label><input id="attIzin" type="number" min="0" value="0"></div><div class="field col-4"><label>Tanpa keterangan (hari)</label><input id="attAlpa" type="number" min="0" value="0"></div></div><button class="btn pink" onclick="saveAttendance()">Simpan Kehadiran</button></div><div class="card" style="margin-top:15px"><div class="tablewrap"><table><thead><tr><th>Anak</th><th>Sakit</th><th>Izin</th><th>Tanpa keterangan</th><th>Aksi</th></tr></thead><tbody id="attendanceTable"></tbody></table></div></div></section>
+<section id="page-rapor" class="page"><div class="pagehead no-print"><div><h2>Preview & Cetak Rapor</h2><p class="sub">Periksa hasil sebelum mencetak atau menyimpan sebagai PDF.</p></div></div><div class="card no-print"><div class="grid"><div class="field col-4"><label>Pilih peserta didik</label><select id="reportStudent" class="control"></select></div><div class="field col-4"><label>Tahun pelajaran</label><input id="reportYear" class="control"></div><div class="field col-4"><label>Semester</label><select id="reportSemester" class="control"><option>Semester 1</option><option>Semester 2</option></select></div></div><div class="row"><button class="btn pink" onclick="renderReport()">Perbarui Preview</button><button class="btn blue" onclick="window.print()">🖨️ Cetak / Simpan PDF</button></div><p class="hint">Pada jendela cetak, pilih ukuran kertas F4/Folio jika tersedia, lalu pilih printer atau “Save as PDF”.</p></div><div id="reportPlaceholder" class="notice no-print">Pilih peserta didik lalu klik Perbarui Preview.</div><div id="reportPaper" class="report-paper hidden"><div class="watermark" id="reportWatermark">PAUD YASTAMU</div><div class="report-content"><div class="report-head"><div style="font-size:11px;font-weight:bold">LAPORAN PERKEMBANGAN ANAK USIA DINI</div><h2 id="rSchool">PAUD YASTAMU</h2><p id="rAddress"></p><p id="rNpsn"></p></div><div class="report-title">LAPORAN PERKEMBANGAN PESERTA DIDIK<br><span id="rPeriod" style="font-size:12px;font-weight:normal"></span></div><div class="report-section"><h3>IDENTITAS PESERTA DIDIK</h3><div id="rIdentity"></div></div><div class="report-section"><h3>A. CAPAIAN PEMBELAJARAN KURIKULUM MERDEKA RA</h3><div id="rCurriculum"></div><div id="rAssessments" class="hidden"></div></div><div class="report-section"><h3>B. PERTUMBUHAN FISIK</h3><div id="rGrowth"></div></div><div class="report-section"><h3>C. CATATAN GURU / REKOMENDASI</h3><div id="rTeacherNotes"></div></div><div class="report-section"><h3>D. REFLEKSI ORANG TUA / WALI</h3><div class="parent-reflection"><div class="reflection-line"></div><div class="reflection-line"></div><div class="reflection-line"></div><div class="reflection-line"></div></div></div><div class="report-section"><h3>B. HAFALAN SURAH, DOA, DAN HADITS</h3><table class="report-table"><thead><tr><th>Jenis</th><th>Hafalan</th><th>Predikat</th><th>Catatan</th></tr></thead><tbody id="rHafalan"></tbody></table></div><div class="report-section"><h3>C. KEGIATAN / EKSTRAKURIKULER</h3><table class="report-table"><thead><tr><th>Kegiatan</th><th>Keikutsertaan</th><th>Keterangan</th></tr></thead><tbody id="rKegiatan"></tbody></table></div><div class="report-section"><h3>E. KEHADIRAN</h3><div id="rAttendance"></div></div><div class="signatures"><div>Mengetahui,<br>Orang Tua / Wali<div class="space"></div><div class="signature-name">________________________</div></div><div id="rTeacherCity">Guru Kelas<div class="space"></div><div class="signature-name" id="rTeacher">________________________</div></div><div id="rHeadCity">Kepala Sekolah<div class="space"></div><div class="signature-name" id="rHead">________________________</div><div id="rNipSign"></div></div></div></div></div></section>
+<section id="page-backup" class="page"><div class="pagehead"><div><h2>Backup & Pemulihan Data</h2><p class="sub">Simpan salinan data agar dapat dipulihkan di kemudian hari.</p></div></div><div class="notice"><b>Penting:</b> data utama disimpan di browser ini. File backup diperlukan untuk memindahkan data ke browser/perangkat lain atau jika data browser terhapus. Foto siswa ikut dimasukkan ke backup.</div><div class="grid"><div class="card col-6"><h3>Unduh backup</h3><p>Ekspor semua data sekolah, siswa, orang tua, aspek, penilaian, hafalan, kegiatan, dan absensi menjadi file JSON.</p><button class="btn pink" onclick="exportBackup()">⬇ Unduh Backup JSON</button></div><div class="card col-6"><h3>Pulihkan backup</h3><p>Pilih file JSON hasil ekspor aplikasi ini. Data yang ada akan diganti dengan data dari file.</p><div class="field"><label>File backup (.json)</label><input type="file" id="backupFile" accept=".json,application/json"></div><button class="btn yellow" onclick="importBackup()">⬆ Pulihkan Data</button></div><div class="card col-12"><h3>Data tersimpan di browser ini</h3><p id="storageInfo"></p><button class="btn red" onclick="clearAllData()">Hapus Semua Data Aplikasi</button><p class="hint">Tindakan hapus semua data tidak dapat dibatalkan. Unduh backup sebelum melanjutkan.</p></div></div></section>
+</main></div><div class="footer">E-RAPOT PAUD YASTAMU · Pengembang Brenda Tiara</div>
+<script>
+const KEY='erapot_paud_yastamu_full_v2';
+const initial={school:{nama:'PAUD YASTAMU',watermark:'PAUD YASTAMU',tahun:'2026/2027',semester:'Semester 1'},students:[],parents:{},aspects:[{id:'asp1',nama:'Nilai Agama dan Budi Pekerti',keterangan:'Mengenal nilai agama dan perilaku baik.',templates:{BSB:'{nama} menunjukkan perkembangan sangat baik dalam mengenal nilai agama dan membiasakan perilaku terpuji.',BSH:'{nama} menunjukkan perkembangan sesuai harapan dalam mengenal nilai agama dan membiasakan perilaku terpuji.',MB:'{nama} mulai berkembang dalam mengenal nilai agama dan membiasakan perilaku terpuji dengan bimbingan.',BB:'{nama} masih memerlukan pendampingan intensif untuk mengenal nilai agama dan membiasakan perilaku terpuji.'}},{id:'asp2',nama:'Jati Diri',keterangan:'Mengenal diri, emosi, kemandirian, dan hubungan sosial.',templates:{BSB:'{nama} menunjukkan perkembangan sangat baik dalam mengenal diri, mengelola emosi, dan berinteraksi dengan teman.',BSH:'{nama} menunjukkan perkembangan sesuai harapan dalam mengenal diri, mengelola emosi, dan berinteraksi dengan teman.',MB:'{nama} mulai berkembang dalam mengenal diri dan berinteraksi dengan teman serta masih memerlukan arahan.',BB:'{nama} masih memerlukan pendampingan untuk mengenal diri dan berinteraksi dengan lingkungan.'}},{id:'asp3',nama:'Dasar-Dasar Literasi, Matematika, Sains, Teknologi, Rekayasa, dan Seni',keterangan:'Kemampuan awal berpikir, berbahasa, bereksplorasi, dan berkarya.',templates:{BSB:'{nama} menunjukkan perkembangan sangat baik dalam bereksplorasi, berkomunikasi, dan mengungkapkan ide melalui kegiatan bermain.',BSH:'{nama} menunjukkan perkembangan sesuai harapan dalam bereksplorasi, berkomunikasi, dan mengungkapkan ide melalui kegiatan bermain.',MB:'{nama} mulai berkembang dalam bereksplorasi dan mengungkapkan ide dengan stimulasi guru.',BB:'{nama} masih memerlukan stimulasi dan pendampingan untuk bereksplorasi serta mengungkapkan ide.'}}],assessments:[],hafalan:[],activities:[],attendance:[],curriculumReports:[]};
+let db=loadDB(), parentTab='ayah';
+db.curriculumReports = Array.isArray(db.curriculumReports) ? db.curriculumReports : [];
+function loadDB(){try{let x=JSON.parse(localStorage.getItem(KEY));return x?{...structuredClone(initial),...x}:structuredClone(initial)}catch(e){return structuredClone(initial)}}
+function saveDB(){try{localStorage.setItem(KEY,JSON.stringify(db));renderAll();if(window.queueCloudSave)window.queueCloudSave(db)}catch(e){alert('Penyimpanan gagal. Ukuran foto mungkin terlalu besar. Kurangi ukuran foto lalu coba lagi.')}}
+function id(){return Date.now().toString(36)+Math.random().toString(36).slice(2,8)}
+function $(x){return document.getElementById(x)}function val(x){return $(x).value.trim()}function setv(x,v){$(x).value=v??''}
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function emptyRow(n,msg='Belum ada data.') {return `<tr><td class="empty" colspan="${n}">${msg}</td></tr>`}
+function student(idv){return db.students.find(s=>s.id===idv)}function studentName(idv){return student(idv)?.nama||'Siswa tidak ditemukan'}function aspect(idv){return db.aspects.find(a=>a.id===idv)}
+function go(page){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));$('page-'+page).classList.add('active');document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.page===page));if(page==='rapor')renderReport()}
+document.querySelectorAll('.navbtn').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
+$('filterTahun').addEventListener('change',renderAll);$('filterSemester').addEventListener('change',renderAll);$('filterKelas').addEventListener('change',renderAll);$('searchStudent').addEventListener('input',renderStudents);$('parentStudent').addEventListener('change',renderParentForm);$('reportStudent').addEventListener('change',renderReport);$('sFoto').addEventListener('change',()=>{let f=$('sFoto').files[0];if(f){if(f.size>1024*1024){alert('Foto maksimal 1 MB.');$('sFoto').value='';return}let r=new FileReader();r.onload=()=>{$('fotoPreview').src=r.result;$('fotoPreview').classList.remove('hidden')};r.readAsDataURL(f)}});
+document.querySelectorAll('[data-ortutab]').forEach(b=>b.addEventListener('click',()=>{parentTab=b.dataset.ortutab;document.querySelectorAll('[data-ortutab]').forEach(x=>x.classList.toggle('active',x===b));renderParentForm()}));
+function saveSchool(){db.school={nama:val('schoolNama'),npsn:val('schoolNpsn'),alamat:val('schoolAlamat'),desa:val('schoolDesa'),kecamatan:val('schoolKecamatan'),kota:val('schoolKota'),tahun:val('schoolTahun'),semester:val('schoolSemester'),kepala:val('schoolKepala'),nip:val('schoolNip'),guru:val('schoolGuru'),watermark:val('schoolWatermark')};$('filterTahun').value=db.school.tahun||$('filterTahun').value;$('filterSemester').value=db.school.semester||'Semester 1';saveDB();alert('Identitas sekolah disimpan.')}
+function fillSchool(){let s=db.school||{};[['schoolNama','nama'],['schoolNpsn','npsn'],['schoolAlamat','alamat'],['schoolDesa','desa'],['schoolKecamatan','kecamatan'],['schoolKota','kota'],['schoolTahun','tahun'],['schoolSemester','semester'],['schoolKepala','kepala'],['schoolNip','nip'],['schoolGuru','guru'],['schoolWatermark','watermark']].forEach(([i,k])=>setv(i,s[k]));}
+function resetStudentForm(){['studentId','sNisn','sNik','sNama','sPanggilan','sTempat','sTgl','sAnakKe','sSaudara','sStatusKeluarga','sMasuk','sGuru','sAlamat'].forEach(x=>setv(x,''));setv('sAgama','Islam');setv('sJk','L');setv('sKelas','Kelompok A');setv('sTahun',val('filterTahun')||db.school.tahun||'2026/2027');$('sFoto').value='';$('fotoPreview').classList.add('hidden')}
+function saveStudent(){let name=val('sNama');if(!name){alert('Nama lengkap wajib diisi.');return}let old=student(val('studentId'));let obj={id:val('studentId')||id(),nisn:val('sNisn'),nik:val('sNik'),nama:name,panggilan:val('sPanggilan'),jk:val('sJk'),agama:val('sAgama'),tempat:val('sTempat'),tgl:val('sTgl'),anakKe:val('sAnakKe'),saudara:val('sSaudara'),statusKeluarga:val('sStatusKeluarga'),masuk:val('sMasuk'),kelas:val('sKelas'),guru:val('sGuru'),alamat:val('sAlamat'),tahun:val('sTahun'),foto:old?.foto||''};let f=$('sFoto').files[0];const finish=()=>{let idx=db.students.findIndex(x=>x.id===obj.id);if(idx>=0)db.students[idx]=obj;else db.students.push(obj);resetStudentForm();saveDB();alert('Data peserta didik berhasil disimpan.')};if(f){if(f.size>1024*1024){alert('Foto maksimal 1 MB.');return}let r=new FileReader();r.onload=()=>{obj.foto=r.result;finish()};r.readAsDataURL(f)}else finish()}
+function editStudent(idv){let s=student(idv);if(!s)return;let map={studentId:'id',sNisn:'nisn',sNik:'nik',sNama:'nama',sPanggilan:'panggilan',sJk:'jk',sAgama:'agama',sTempat:'tempat',sTgl:'tgl',sAnakKe:'anakKe',sSaudara:'saudara',sStatusKeluarga:'statusKeluarga',sMasuk:'masuk',sKelas:'kelas',sGuru:'guru',sAlamat:'alamat',sTahun:'tahun'};Object.entries(map).forEach(([a,b])=>setv(a,s[b]));if(s.foto){$('fotoPreview').src=s.foto;$('fotoPreview').classList.remove('hidden')}go('siswa');window.scrollTo(0,0)}
+function deleteStudent(idv){let s=student(idv);if(!s||!confirm(`Hapus ${s.nama} dan semua data rapor terkait?`))return;db.students=db.students.filter(x=>x.id!==idv);delete db.parents[idv];['assessments','hafalan','activities','attendance'].forEach(k=>db[k]=db[k].filter(x=>x.studentId!==idv));saveDB()}
+function renderStudents(){let q=(val('searchStudent')||'').toLowerCase();let rows=db.students.filter(s=>(s.nama+' '+s.nisn).toLowerCase().includes(q));$('studentsTable').innerHTML=rows.map(s=>`<tr><td>${s.foto?`<img class="avatar" src="${s.foto}" alt="Foto">`:'—'}</td><td>${esc(s.nama)}<br><span class="hint">${esc(s.panggilan)}</span></td><td>${esc(s.nisn)}</td><td>${s.jk==='P'?'Perempuan':'Laki-laki'}</td><td>${esc(s.kelas)}</td><td>${esc(s.tahun)}</td><td><div class="row"><button class="btn small" onclick="editStudent('${s.id}')">Edit</button><button class="btn small" onclick="editStudent('${s.id}')">Edit</button><button class="btn small" onclick="printStudentIdentity('${s.id}')">Cetak Identitas</button><button class="btn small red" onclick="deleteStudent('${s.id}')">Hapus</button></div></td></tr>`).join('')||emptyRow(7,'Belum ada peserta didik.')}
+function printStudentIdentity(id) {
+  const student = db.students.find(s => String(s.id) === String(id));
+
+  if (!student) {
+    alert("Data anak tidak ditemukan.");
+    return;
+  }
+
+  const parents = db.parents[student.id] || {};
+  const ayah = parents.ayah || {};
+  const ibu = parents.ibu || {};
+  const school = db.school || {};
+
+  const field = (label, value) => `
+    <tr>
+      <td class="label">${label}</td>
+      <td>${esc(value || "-")}</td>
+    </tr>
+  `;
+
+  const parentFields = (judul, data) => `
+    <h3>${judul}</h3>
+    <table>
+      ${field("Nama lengkap", data.nama)}
+      ${field("Tempat lahir", data.tempat)}
+      ${field("Tanggal lahir", data.tgl)}
+      ${field("Alamat", data.alamat)}
+      ${field("Pendidikan terakhir", data.pendidikan)}
+      ${field("Pekerjaan", data.pekerjaan)}
+      ${field("Agama", data.agama)}
+    </table>
+  `;
+
+  const tanggalCetak = new Date().toLocaleDateString("id-ID", {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
+
+  const tempatTanggal = prompt(
+    "Masukkan tempat dan tanggal tanda tangan:",
+    `${school.kota || ""}, ${tanggalCetak}`
+  );
+
+  if (tempatTanggal === null) return;
+
+  const printWindow = window.open("", "_blank");
+
+  if (!printWindow) {
+    alert("Izinkan pop-up di browser agar bisa mencetak.");
+    return;
+  }
+
+  printWindow.document.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Identitas Peserta Didik</title>
+      <style>
+        @page {
+          size: 21.5cm 33cm;
+          margin: 1.2cm;
+        }
+
+        body {
+          font-family: Arial, sans-serif;
+          color: #222;
+          font-size: 11px;
+        }
+
+        h2 {
+          text-align: center;
+          font-size: 17px;
+          margin-bottom: 18px;
+        }
+
+        h3 {
+          font-size: 12px;
+          margin: 15px 0 6px;
+          background: #eee;
+          padding: 6px;
+        }
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-bottom: 8px;
+        }
+
+        td {
+          border: 1px solid #888;
+          padding: 5px 7px;
+          vertical-align: top;
+        }
+
+        .label {
+          width: 34%;
+          font-weight: bold;
+        }
+
+        .footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          margin-top: 35px;
+          gap: 1cm;
+        }
+
+        .foto-area {
+          width: 3cm;
+          flex: 0 0 3cm;
+          text-align: left;
+          position: relative;
+          left: 8cm;
+          
+        }
+
+        .foto {
+          width: 3cm;
+          height: 4cm;
+          object-fit: cover;
+          border: 1px solid #777;
+        }
+
+        .foto-kosong {
+          width: 3cm;
+          height: 4cm;
+          border: 1px solid #777;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #777;
+          text-align: center;
+        }
+
+        .ttd {
+          width: 45%;
+          text-align: center;
+          line-height: 1.5;
+        }
+
+        .space {
+          height: 65px;
+        }
+
+        @media print {
+          button { display: none; }
+        }
+      </style>
+    </head>
+
+    <body>
+
+      <h2>IDENTITAS PESERTA DIDIK<br>PAUD YASTAMU</h2>
+
+      <h3>I. IDENTITAS ANAK</h3>
+
+      <table>
+        ${field("Nama lengkap", student.nama)}
+        ${field("Nama panggilan", student.panggilan)}
+        ${field("Nomor Induk / NISN", student.nisn)}
+        ${field("NIK", student.nik)}
+        ${field("Jenis kelamin", student.jk === "P" ? "Perempuan" : "Laki-laki")}
+        ${field("Tempat lahir", student.tempat)}
+        ${field("Tanggal lahir", student.tgl)}
+        ${field("Agama", student.agama)}
+        ${field("Anak ke-", student.anakKe)}
+        ${field("Jumlah saudara kandung", student.saudara)}
+        ${field("Status dalam keluarga", student.statusKeluarga)}
+        ${field("Alamat anak didik", student.alamat)}
+        ${field("Tanggal diterima", student.masuk)}
+        ${field("Kelas", student.kelas)}
+      </table>
+
+      <h3>II. IDENTITAS ORANG TUA</h3>
+
+      ${parentFields("A. AYAH / WALI", ayah)}
+      ${parentFields("B. IBU / WALI", ibu)}
+
+      <div class="footer">
+
+        <div class="foto-area">
+          ${student.foto
+            ? `<img class="foto" src="${esc(student.foto)}">`
+            : `<div class="foto-kosong">FOTO SISWA</div>`}
+        </div>
+
+        <div class="ttd">
+          ${esc(tempatTanggal)}<br>
+          Kepala Madrasah
+          <div class="space"></div>
+          <b><u>${esc(school.kepala || "................................")}</u></b>
+          ${school.nip ? `<br>NIP. ${esc(school.nip)}` : ""}
+        </div>
+
+      </div>
+
+      <br>
+      <button onclick="window.print()">CETAK IDENTITAS</button>
+
+    </body>
+    </html>
+  `);
+
+  printWindow.document.close();
+}function importExcel(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  if (typeof XLSX === "undefined") {
+    alert("Pustaka Excel belum berhasil dimuat. Periksa koneksi internet.");
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function(e) {
+    try {
+      const workbook = XLSX.read(e.target.result, { type: "array" });
+      const sheet = workbook.Sheets[workbook.SheetNames[0]];
+      const rows = XLSX.utils.sheet_to_json(sheet, { defval: "" });
+
+      if (!rows.length) {
+        alert("File Excel tidak memiliki data.");
+        return;
+      }
+
+      let jumlah = 0;
+
+      rows.forEach(row => {
+        const nama = String(row["Nama lengkap"] || "").trim();
+        if (!nama) return;
+
+        const id = "siswa_" + Date.now() + "_" + jumlah;
+
+        const siswa = {
+          id,
+          nisn: String(row["NISN"] || ""),
+          nik: "",
+          nama,
+          panggilan: String(row["Nama panggilan"] || ""),
+          jk: String(row["Jenis kelamin"] || "").toUpperCase().startsWith("P") ? "P" : "L",
+          agama: String(row["Agama"] || "Islam"),
+          tempat: String(row["Tempat lahir"] || ""),
+          tgl: String(row["Tanggal lahir"] || ""),
+          anakKe: String(row["Anak ke-"] || ""),
+          saudara: String(row["Jumlah saudara"] || ""),
+          statusKeluarga: String(row["Status dalam keluarga"] || ""),
+          masuk: String(row["Tanggal masuk"] || ""),
+          kelas: String(row["Kelas"] || "Kelompok A"),
+          guru: "",
+          alamat: String(row["Alamat"] || ""),
+          tahun: String(row["Tahun pelajaran"] || ""),
+          foto: ""
+        };
+
+        db.students.push(siswa);
+
+        db.parents[id] = {
+          ayah: {
+            nama: String(row["Nama ayah"] || ""),
+            tempat: String(row["Tempat lahir ayah"] || ""),
+            tgl: String(row["Tanggal lahir ayah"] || ""),
+            alamat: String(row["Alamat ayah"] || ""),
+            pendidikan: String(row["Pendidikan ayah"] || ""),
+            pekerjaan: String(row["Pekerjaan ayah"] || ""),
+            agama: String(row["Agama ayah"] || "")
+          },
+          ibu: {
+            nama: String(row["Nama ibu"] || ""),
+            tempat: String(row["Tempat lahir ibu"] || ""),
+            tgl: String(row["Tanggal lahir ibu"] || ""),
+            alamat: String(row["Alamat ibu"] || ""),
+            pendidikan: String(row["Pendidikan ibu"] || ""),
+            pekerjaan: String(row["Pekerjaan ibu"] || ""),
+            agama: String(row["Agama ibu"] || "")
+          }
+        };
+
+        jumlah++;
+      });
+
+      saveDB();
+      renderStudents();
+
+      alert(jumlah + " data peserta didik berhasil diimpor.");
+    } catch (error) {
+      alert("Gagal membaca Excel: " + error.message);
+    }
+
+    event.target.value = "";
+  };
+
+  reader.readAsArrayBuffer(file);
+}function downloadExcelTemplate() {
+  const headers = [
+    "Nama lengkap",
+    "Nama panggilan",
+    "NISN",
+    "Jenis kelamin",
+    "Tempat lahir",
+    "Tanggal lahir",
+    "Agama",
+    "Anak ke-",
+    "Jumlah saudara",
+    "Status dalam keluarga",
+    "Alamat",
+    "Tanggal masuk",
+    "Kelas",
+    "Tahun pelajaran",
+    "Nama ayah",
+    "Tempat lahir ayah",
+    "Tanggal lahir ayah",
+    "Alamat ayah",
+    "Pendidikan ayah",
+    "Pekerjaan ayah",
+    "Agama ayah",
+    "Nama ibu",
+    "Tempat lahir ibu",
+    "Tanggal lahir ibu",
+    "Alamat ibu",
+    "Pendidikan ibu",
+    "Pekerjaan ibu",
+    "Agama ibu"
+  ];
+
+  const wb = XLSX.utils.book_new();
+
+  const ws = XLSX.utils.aoa_to_sheet([
+    headers
+  ]);
+
+  ws["!cols"] = headers.map(() => ({ wch: 22 }));
+
+  XLSX.utils.book_append_sheet(wb, ws, "Data Siswa");
+
+  const petunjuk = XLSX.utils.aoa_to_sheet([
+    ["PETUNJUK PENGISIAN"],
+    ["Satu baris untuk satu peserta didik."],
+    ["Jenis kelamin isi L untuk laki-laki atau P untuk perempuan."],
+    ["Tanggal gunakan format YYYY-MM-DD, contoh 2019-05-12."],
+    ["Jangan mengubah nama kolom pada sheet Data Siswa."]
+  ]);
+
+  XLSX.utils.book_append_sheet(wb, petunjuk, "Petunjuk");
+
+  XLSX.writeFile(wb, "Templat_Impor_E_RAPOT_PAUD.xlsx");
+}
+const parentFields={ayah:[['nama','Nama lengkap'],['tempat','Tempat lahir'],['tgl','Tanggal lahir','date'],['pendidikan','Pendidikan'],['pekerjaan','Pekerjaan'],['agama','Agama'],['alamat','Alamat']],ibu:[['nama','Nama lengkap'],['tempat','Tempat lahir'],['tgl','Tanggal lahir','date'],['pendidikan','Pendidikan'],['pekerjaan','Pekerjaan'],['agama','Agama'],['alamat','Alamat']],wali:[['nama','Nama lengkap'],['tempat','Tempat lahir'],['tgl','Tanggal lahir','date'],['pendidikan','Pendidikan'],['pekerjaan','Pekerjaan'],['agama','Agama'],['alamat','Alamat']]};
+function renderParentForm(){let sid=val('parentStudent'),p=(db.parents[sid]||{})[parentTab]||{};$('parentForm').innerHTML=`<div class="grid">${parentFields[parentTab].map(([k,label,type])=>`<div class="field ${k==='alamat'?'col-12':'col-6'}"><label>${label}</label>${k==='alamat'?`<textarea id="p_${k}">${esc(p[k])}</textarea>`:`<input id="p_${k}" type="${type||'text'}" value="${esc(p[k])}">`}</div>`).join('')}</div>`}
+function saveParent(){let sid=val('parentStudent');if(!sid){alert('Tambahkan peserta didik terlebih dahulu.');return}db.parents[sid]=db.parents[sid]||{};let obj={};parentFields[parentTab].forEach(([k])=>obj[k]=val('p_'+k));db.parents[sid][parentTab]=obj;saveDB();alert('Data '+parentTab+' tersimpan.')}
+function resetAspectForm(){['aspectId','aspectNama','aspectKeterangan','templateBSB','templateBSH','templateMB','templateBB'].forEach(x=>setv(x,''))}
+function saveAspect(){let nama=val('aspectNama');if(!nama){alert('Nama aspek wajib diisi.');return}let obj={id:val('aspectId')||id(),nama,keterangan:val('aspectKeterangan'),templates:{BSB:val('templateBSB'),BSH:val('templateBSH'),MB:val('templateMB'),BB:val('templateBB')}};let idx=db.aspects.findIndex(a=>a.id===obj.id);if(idx>=0)db.aspects[idx]=obj;else db.aspects.push(obj);resetAspectForm();saveDB();alert('Aspek dan templat narasi tersimpan.')}
+function editAspect(idv){let a=aspect(idv);if(!a)return;setv('aspectId',a.id);setv('aspectNama',a.nama);setv('aspectKeterangan',a.keterangan);['BSB','BSH','MB','BB'].forEach(p=>setv('template'+p,a.templates?.[p]));go('aspek')}
+function deleteAspect(idv){if(!confirm('Hapus aspek ini? Penilaian lama tetap tersimpan tetapi nama aspek tidak lagi tersedia.'))return;db.aspects=db.aspects.filter(a=>a.id!==idv);saveDB()}
+function renderAspects(){$('aspectsTable').innerHTML=db.aspects.map(a=>`<tr><td><b>${esc(a.nama)}</b></td><td>${esc(a.keterangan)}</td><td>${['BSB','BSH','MB','BB'].map(p=>`<div><b>${p}:</b> ${esc(a.templates?.[p]||'Belum diatur')}</div>`).join('')}</td><td><div class="row"><button class="btn small" onclick="editAspect('${a.id}')">Edit</button><button class="btn small red" onclick="deleteAspect('${a.id}')">Hapus</button></div></td></tr>`).join('')||emptyRow(4)}
+function generateNarrative(){let a=aspect(val('aAspect')),s=student(val('aStudent')),p=val('aPredicate');if(!a||!s){alert('Pilih peserta didik dan aspek terlebih dahulu.');return}let t=a.templates?.[p]||'';if(!t){alert('Templat untuk predikat '+p+' belum dibuat. Kamu bisa menulis narasi secara manual.');return}setv('aNarrative',t.replaceAll('{nama}',s.nama).replaceAll('{aspek}',a.nama));}
+function resetAssessmentForm(){['assessmentId','aNarrative','aFollowup'].forEach(x=>setv(x,''));setv('aPredicate','BSB')}
+function saveAssessment(){let sid=val('aStudent'),aid=val('aAspect');if(!sid||!aid){alert('Pilih peserta didik dan aspek.');return}let obj={id:val('assessmentId')||id(),studentId:sid,aspectId:aid,predicate:val('aPredicate'),narrative:val('aNarrative'),followup:val('aFollowup'),year:val('filterTahun')||db.school.tahun||'',semester:val('filterSemester')||db.school.semester||'Semester 1'};let idx=db.assessments.findIndex(x=>x.id===obj.id);if(idx>=0)db.assessments[idx]=obj;else db.assessments.push(obj);resetAssessmentForm();saveDB();alert('Penilaian berhasil disimpan.')}
+function editAssessment(idv){let a=db.assessments.find(x=>x.id===idv);if(!a)return;setv('assessmentId',a.id);setv('aStudent',a.studentId);setv('aAspect',a.aspectId);setv('aPredicate',a.predicate);setv('aNarrative',a.narrative);setv('aFollowup',a.followup);go('penilaian')}
+function removeItem(key,idv){if(!confirm('Hapus data ini?'))return;db[key]=db[key].filter(x=>x.id!==idv);saveDB()}
+function saveHafalan(){let sid=val('hStudent'),nama=val('hNama');if(!sid||!nama){alert('Pilih anak dan isi nama hafalan.');return}let obj={id:val('hafalanId')||id(),studentId:sid,jenis:val('hJenis'),nama,predicate:val('hPredikat'),catatan:val('hCatatan')};let ix=db.hafalan.findIndex(x=>x.id===obj.id);if(ix>=0)db.hafalan[ix]=obj;else db.hafalan.push(obj);resetHafalanForm();saveDB()}
+function resetHafalanForm(){['hafalanId','hNama','hCatatan'].forEach(x=>setv(x,''));setv('hPredikat','BSB')}
+function editHafalan(idv){let x=db.hafalan.find(y=>y.id===idv);if(!x)return;setv('hafalanId',x.id);setv('hStudent',x.studentId);setv('hJenis',x.jenis);setv('hNama',x.nama);setv('hPredikat',x.predicate);setv('hCatatan',x.catatan);go('hafalan')}
+function saveActivity(){let sid=val('kStudent'),nama=val('kNama');if(!sid||!nama){alert('Pilih anak dan isi nama kegiatan.');return}let obj={id:val('kegiatanId')||id(),studentId:sid,nama,status:val('kStatus'),catatan:val('kCatatan')};let ix=db.activities.findIndex(x=>x.id===obj.id);if(ix>=0)db.activities[ix]=obj;else db.activities.push(obj);['kegiatanId','kNama','kCatatan'].forEach(x=>setv(x,''));saveDB()}
+function editActivity(idv){let x=db.activities.find(y=>y.id===idv);if(!x)return;setv('kegiatanId',x.id);setv('kStudent',x.studentId);setv('kNama',x.nama);setv('kStatus',x.status);setv('kCatatan',x.catatan);go('kegiatan')}
+function saveAttendance(){let sid=val('attStudent');if(!sid){alert('Pilih peserta didik.');return}let obj={id:db.attendance.find(x=>x.studentId===sid)?.id||id(),studentId:sid,sakit:Math.max(0,+val('attSakit')||0),izin:Math.max(0,+val('attIzin')||0),alpa:Math.max(0,+val('attAlpa')||0)};let ix=db.attendance.findIndex(x=>x.studentId===sid);if(ix>=0)db.attendance[ix]=obj;else db.attendance.push(obj);saveDB();alert('Kehadiran tersimpan.')}
+function loadAttendanceForm(){let x=db.attendance.find(a=>a.studentId===val('attStudent'));setv('attSakit',x?.sakit??0);setv('attIzin',x?.izin??0);setv('attAlpa',x?.alpa??0)}$('attStudent').addEventListener('change',loadAttendanceForm);
+function populateSelect(idv,selected){let el=$(idv),old=selected??el.value;el.innerHTML='<option value="">-- Pilih peserta didik --</option>'+db.students.map(s=>`<option value="${esc(s.id)}">${esc(s.nama)}${s.kelas?' — '+esc(s.kelas):''}</option>`).join('');if(db.students.some(s=>s.id===old))el.value=old}
+function renderSelects(){['parentStudent','aStudent','hStudent','kStudent','attStudent','reportStudent'].forEach(x=>populateSelect(x));let old=val('aAspect');$('aAspect').innerHTML='<option value="">-- Pilih aspek --</option>'+db.aspects.map(a=>`<option value="${esc(a.id)}">${esc(a.nama)}</option>`).join('');if(db.aspects.some(a=>a.id===old))$('aAspect').value=old;let years=[db.school.tahun,...db.students.map(s=>s.tahun),...db.assessments.map(a=>a.year)].filter(Boolean);years=[...new Set(years)];let y=val('filterTahun')||db.school.tahun||'2026/2027';$('filterTahun').innerHTML=[...new Set([y,...years])].map(x=>`<option>${esc(x)}</option>`).join('');$('filterTahun').value=y;if(db.school.semester)$('filterSemester').value=db.school.semester;$('reportYear').value=val('reportYear')||y;$('reportSemester').value=val('reportSemester')||val('filterSemester')}
+function filteredStudents(){let k=val('filterKelas'),y=val('filterTahun');return db.students.filter(s=>(!k||s.kelas===k)&&(!y||!s.tahun||s.tahun===y))}
+function renderDashboard(){let ss=filteredStudents(),y=val('filterTahun'),sem=val('filterSemester'),as=db.assessments.filter(a=>(!y||a.year===y)&&(!sem||a.semester===sem));let done=ss.filter(s=>as.some(a=>a.studentId===s.id));let pct=ss.length?Math.round(done.length/ss.length*100):0;$('statSiswa').textContent=ss.length;$('statAspek').textContent=db.aspects.length;$('statNilai').textContent=as.length;$('statRapor').textContent=pct+'%';$('progressBar').style.width=pct+'%';$('progressText').textContent=`${done.length} dari ${ss.length} peserta didik sudah memiliki penilaian.`;$('dashboardTabel').innerHTML=ss.map(s=>{let n=as.filter(a=>a.studentId===s.id).length;return `<tr><td>${esc(s.nama)}</td><td>${esc(s.kelas)}</td><td>${n}</td><td><span class="badge ${n?'BSH':'BB'}">${n?'Mulai terisi':'Belum diisi'}</span></td></tr>`}).join('')||emptyRow(4,'Belum ada peserta didik pada periode/filter ini.')}
+function renderLists(){renderStudents();renderAspects();let y=val('filterTahun'),sem=val('filterSemester');let as=db.assessments.filter(a=>(!y||a.year===y)&&(!sem||a.semester===sem));$('assessmentsTable').innerHTML=as.map(a=>`<tr><td>${esc(studentName(a.studentId))}</td><td>${esc(aspect(a.aspectId)?.nama||'Aspek dihapus')}</td><td><span class="badge ${a.predicate}">${esc(a.predicate)}</span></td><td>${esc(a.narrative)}</td><td><div class="row"><button class="btn small" onclick="editAssessment('${a.id}')">Edit</button><button class="btn small red" onclick="removeItem('assessments','${a.id}')">Hapus</button></div></td></tr>`).join('')||emptyRow(5);$('hafalanTable').innerHTML=db.hafalan.map(h=>`<tr><td>${esc(studentName(h.studentId))}</td><td>${esc(h.jenis)}</td><td>${esc(h.nama)}</td><td><span class="badge ${h.predicate}">${esc(h.predicate)}</span></td><td>${esc(h.catatan)}</td><td><div class="row"><button class="btn small" onclick="editHafalan('${h.id}')">Edit</button><button class="btn small red" onclick="removeItem('hafalan','${h.id}')">Hapus</button></div></td></tr>`).join('')||emptyRow(6);$('activitiesTable').innerHTML=db.activities.map(a=>`<tr><td>${esc(studentName(a.studentId))}</td><td>${esc(a.nama)}</td><td>${esc(a.status)}</td><td>${esc(a.catatan)}</td><td><div class="row"><button class="btn small" onclick="editActivity('${a.id}')">Edit</button><button class="btn small red" onclick="removeItem('activities','${a.id}')">Hapus</button></div></td></tr>`).join('')||emptyRow(5);$('attendanceTable').innerHTML=db.attendance.map(a=>`<tr><td>${esc(studentName(a.studentId))}</td><td>${a.sakit}</td><td>${a.izin}</td><td>${a.alpa}</td><td><button class="btn small red" onclick="removeItem('attendance','${a.id}')">Hapus</button></td></tr>`).join('')||emptyRow(5);}
+function renderReport(){let sid=val('reportStudent'),s=student(sid);if(!s){$('reportPaper').classList.add('hidden');$('reportPlaceholder').classList.remove('hidden');return}$('reportPaper').classList.remove('hidden');$('reportPlaceholder').classList.add('hidden');let sc=db.school||{},year=val('reportYear')||sc.tahun||'',sem=val('reportSemester')||sc.semester||'';$('rSchool').textContent=sc.nama||'PAUD YASTAMU';$('rAddress').textContent=[sc.alamat,sc.desa,sc.kecamatan].filter(Boolean).join(', ');$('rNpsn').textContent=sc.npsn?'NPSN: '+sc.npsn:'';$('rPeriod').textContent=`Tahun Pelajaran ${year} · ${sem}`;$('reportWatermark').textContent=sc.watermark||sc.nama||'PAUD YASTAMU';let p=db.parents[sid]||{};$('rIdentity').innerHTML=`<table class="report-table"><tbody><tr><td><b>Nama lengkap</b></td><td>${esc(s.nama)}</td><td><b>NISN</b></td><td>${esc(s.nisn)}</td></tr><tr><td><b>Tempat/tanggal lahir</b></td><td>${esc(s.tempat)}${s.tgl?' / '+esc(s.tgl):''}</td><td><b>Jenis kelamin</b></td><td>${s.jk==='P'?'Perempuan':'Laki-laki'}</td></tr><tr><td><b>Agama</b></td><td>${esc(s.agama)}</td><td><b>Kelas</b></td><td>${esc(s.kelas)}</td></tr><tr><td><b>Alamat</b></td><td colspan="3">${esc(s.alamat)}</td></tr><tr><td><b>Nama ayah</b></td><td>${esc(p.ayah?.nama)}</td><td><b>Nama ibu</b></td><td>${esc(p.ibu?.nama)}</td></tr></tbody></table>`;let as=db.assessments.filter(a=>a.studentId===sid&&(!a.year||a.year===year)&&(!a.semester||a.semester===sem));$('rAssessments').innerHTML=as.map(a=>`<tr><td>${esc(aspect(a.aspectId)?.nama||'Aspek dihapus')}</td><td>${esc(a.predicate)}</td><td>${esc(a.narrative)}</td></tr>`).join('')||emptyRow(3,'Belum ada penilaian untuk periode ini.');renderCurriculumPrint(sid,year,sem);let hs=db.hafalan.filter(h=>h.studentId===sid);$('rHafalan').innerHTML=hs.map(h=>`<tr><td>${esc(h.jenis)}</td><td>${esc(h.nama)}</td><td>${esc(h.predicate)}</td><td>${esc(h.catatan)}</td></tr>`).join('')||emptyRow(4,'Belum ada data hafalan.');let ks=db.activities.filter(k=>k.studentId===sid);$('rKegiatan').innerHTML=ks.map(k=>`<tr><td>${esc(k.nama)}</td><td>${esc(k.status)}</td><td>${esc(k.catatan)}</td></tr>`).join('')||emptyRow(3,'Belum ada data kegiatan.');let crForAttendance=db.curriculumReports.find(x=>x.studentId===sid&&x.year===year&&x.semester===sem),gatt=crForAttendance?.growth,at=db.attendance.find(a=>a.studentId===sid)||{sakit:0,izin:0,alpa:0};$('rAttendance').innerHTML=`<table class="report-table"><tbody><tr><th>Sakit</th><th>Izin</th><th>Tanpa keterangan</th></tr><tr><td>${gatt?.sick??at.sakit} hari</td><td>${gatt?.permission??at.izin} hari</td><td>${gatt?.alpa??at.alpa} hari</td></tr></tbody></table>`;$('rTeacherCity').innerHTML=`${esc(sc.kota||'')}${sc.kota?', ':''}Guru Kelas<div class="space"></div><div class="signature-name" id="rTeacher">${esc(sc.guru||'________________________')}</div>`;$('rHeadCity').innerHTML=`${esc(sc.kota||'')}${sc.kota?', ':''}Kepala Sekolah<div class="space"></div><div class="signature-name" id="rHead">${esc(sc.kepala||'________________________')}</div><div>${sc.nip?'NIP. '+esc(sc.nip):''}</div>`}
+function renderAll(){renderSelects();renderLists();renderDashboard();renderParentForm();loadAttendanceForm();$('storageInfo').textContent=`${db.students.length} siswa · ${db.aspects.length} aspek · ${db.assessments.length} penilaian · ${db.hafalan.length} data hafalan · ${db.activities.length} kegiatan · ${db.attendance.length} data kehadiran.`;if($('page-rapor').classList.contains('active'))renderReport()}
+function exportBackup(){let blob=new Blob([JSON.stringify({app:'E-RAPOT PAUD YASTAMU',version:2,exportedAt:new Date().toISOString(),data:db},null,2)],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='backup-erapot-paud-yastamu-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(a.href)}
+function importBackup(){let f=$('backupFile').files[0];if(!f){alert('Pilih file backup JSON terlebih dahulu.');return}if(!confirm('Data yang ada akan diganti dengan isi backup. Lanjutkan?'))return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result),d=x.data||x;if(!Array.isArray(d.students)||!Array.isArray(d.aspects))throw Error('Format tidak sesuai');db={...structuredClone(initial),...d};saveDB();fillSchool();alert('Backup berhasil dipulihkan.')}catch(e){alert('File backup tidak valid atau tidak berasal dari aplikasi ini.')}};r.readAsText(f)}
+function clearAllData(){if(!confirm('Yakin menghapus SEMUA data aplikasi?'))return;if(!confirm('Konfirmasi terakhir: data yang belum dibackup akan hilang.'))return;localStorage.removeItem(KEY);db=structuredClone(initial);fillSchool();resetStudentForm();saveDB();alert('Semua data aplikasi telah dihapus.')}
+function init(){fillSchool();setv('schoolTahun',db.school.tahun||'2026/2027');setv('schoolSemester',db.school.semester||'Semester 1');setv('sTahun',db.school.tahun||'2026/2027');renderAll();}
+init();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = "https://uunfrffifvlbxqlfynyv.supabase.co";
+  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_s7edDI6QDdTH9CF9bKMtjg_uw4gys-a";
+  const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+
+  const authGate = document.getElementById('authGate');
+  const authForm = document.getElementById('authForm');
+  const authMessage = document.getElementById('authMessage');
+  const authBar = document.getElementById('authBar');
+  const cloudSyncStatus = document.getElementById('cloudSyncStatus');
+  let activeProfile = null;
+  let cloudSaveTimer = null;
+  let cloudSaveRunning = false;
+  let cloudSaveAgain = false;
+
+  function setCloudStatus(message) {
+    if (cloudSyncStatus) cloudSyncStatus.textContent = message;
+  }
+  function showAuth(message='') {
+    authGate.classList.remove('hidden');
+    authBar.classList.add('hidden');
+    authMessage.textContent = message;
+    setCloudStatus('Belum login');
+  }
+  async function loadSchoolData(profile) {
+    setCloudStatus('Mengambil data sekolah...');
+    const { data, error } = await supabaseClient
+      .from('school_app_data')
+      .select('data')
+      .eq('school_id', profile.school_id)
+      .maybeSingle();
+    if (error) throw error;
+
+    if (data && data.data && typeof data.data === 'object') {
+      db = { ...structuredClone(initial), ...data.data };
+      localStorage.setItem(KEY, JSON.stringify(db));
+      fillSchool();
+      renderAll();
+      setCloudStatus('Data sekolah tersinkron dari cloud');
+    } else {
+      // First login on this school: keep existing local data and create the first cloud copy.
+      await saveSchoolDataNow(db);
+      setCloudStatus('Data awal berhasil disimpan ke cloud');
+    }
+  }
+  async function saveSchoolDataNow(snapshot) {
+    if (!activeProfile || !activeProfile.school_id) return;
+    const { error } = await supabaseClient
+      .from('school_app_data')
+      .upsert({
+        school_id: activeProfile.school_id,
+        data: snapshot,
+        updated_at: new Date().toISOString()
+      }, { onConflict: 'school_id' });
+    if (error) throw error;
+  }
+  async function flushCloudSave() {
+    if (!activeProfile) return;
+    if (cloudSaveRunning) { cloudSaveAgain = true; return; }
+    cloudSaveRunning = true;
+    try {
+      do {
+        cloudSaveAgain = false;
+        const snapshot = JSON.parse(JSON.stringify(db));
+        setCloudStatus('Menyimpan perubahan...');
+        await saveSchoolDataNow(snapshot);
+        setCloudStatus('Tersimpan di cloud ✓');
+      } while (cloudSaveAgain);
+    } catch (error) {
+      console.error('Sinkronisasi gagal:', error);
+      setCloudStatus('Belum tersinkron — periksa koneksi');
+    } finally {
+      cloudSaveRunning = false;
+    }
+  }
+  window.queueCloudSave = function() {
+    if (!activeProfile) return;
+    clearTimeout(cloudSaveTimer);
+    cloudSaveTimer = setTimeout(flushCloudSave, 900);
+  };
+
+  function showApp(profile, email) {
+    activeProfile = profile;
+    authGate.classList.add('hidden');
+    authBar.classList.remove('hidden');
+    document.getElementById('authUserLabel').textContent = email || profile.full_name || 'Pengguna';
+    document.getElementById('authRoleLabel').textContent = 'Peran: ' + profile.role;
+  }
+  async function enterApp(profile, email) {
+    activeProfile = profile;
+    try {
+      await loadSchoolData(profile);
+      showApp(profile, email);
+    } catch (error) {
+      activeProfile = null;
+      throw new Error('Login berhasil, tetapi data cloud belum bisa dibuka: ' + (error.message || 'Periksa tabel dan kebijakan akses.'));
+    }
+  }
+  async function verifyProfile(user) {
+    const { data, error } = await supabaseClient
+      .from('user_profiles')
+      .select('id, full_name, role, school_id')
+      .eq('id', user.id)
+      .maybeSingle();
+    if (error) throw error;
+    if (!data || !data.school_id || !['admin','guru'].includes(data.role)) {
+      throw new Error('Akun belum memiliki profil Admin/Guru yang sesuai. Hubungi Admin sekolah.');
+    }
+    return data;
+  }
+  authForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const button = document.getElementById('authSubmit');
+    button.disabled = true;
+    button.textContent = 'Memeriksa...';
+    authMessage.textContent = '';
+    try {
+      const email = document.getElementById('authEmail').value.trim();
+      const password = document.getElementById('authPassword').value;
+      const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+      if (error) throw error;
+      const profile = await verifyProfile(data.user);
+      await enterApp(profile, data.user.email);
+    } catch (error) {
+      await supabaseClient.auth.signOut();
+      activeProfile = null;
+      showAuth(error.message || 'Login gagal. Periksa email dan kata sandi.');
+    } finally {
+      button.disabled = false;
+      button.textContent = 'Masuk';
+    }
+  });
+  document.getElementById('authLogout').addEventListener('click', async () => {
+    clearTimeout(cloudSaveTimer);
+    await flushCloudSave();
+    await supabaseClient.auth.signOut();
+    activeProfile = null;
+    showAuth('Kamu sudah keluar dari aplikasi.');
+  });
+  (async function restoreSession() {
+    try {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (!session) { showAuth(); return; }
+      const profile = await verifyProfile(session.user);
+      await enterApp(profile, session.user.email);
+    } catch (error) {
+      await supabaseClient.auth.signOut();
+      activeProfile = null;
+      showAuth(error.message || 'Sesi tidak dapat diverifikasi. Silakan masuk kembali.');
+    }
+  })();
+  console.log('Supabase Auth dan sinkronisasi data sekolah siap.');
+
+// --- Kurikulum Merdeka RA: penilaian TP, dokumentasi, P5RA, dan data pelengkap ---
+const CR_ELEMENTS={
+ e1:{title:'Elemen 1: Nilai Agama dan Budi Pekerti',tp:['Mengenal dan mempraktikkan nilai agama sesuai keyakinan keluarga dan lembaga.','Mengenal kegiatan ibadah dan mengikuti pembiasaan ibadah sederhana.','Mengenal perilaku baik seperti jujur, santun, dan suka menolong.','Menunjukkan rasa syukur dan menjaga ciptaan Tuhan.','Mengenal aturan sederhana dan mulai menerapkannya dalam keseharian.','Menunjukkan kepedulian, berbagi, dan menghargai orang lain.']},
+ e2:{title:'Elemen 2: Jati Diri',tp:['Mengenali identitas diri, kesukaan, dan karakteristik diri.','Mengenali serta mengungkapkan emosi dengan cara yang dapat diterima.','Menunjukkan kemandirian dalam kegiatan sehari-hari.','Menggunakan anggota tubuh dan koordinasi gerak dalam kegiatan bermain.','Menjaga kebersihan, kesehatan, dan keselamatan diri dengan bantuan sesuai kebutuhan.','Berinteraksi, bekerja sama, dan menghargai teman.']},
+ e3:{title:'Elemen 3: Dasar-dasar Literasi, Matematika, Sains, Teknologi, Rekayasa, dan Seni (STEAM)',tp:['Menyimak, memahami informasi, dan merespons percakapan atau cerita.','Mengungkapkan gagasan, perasaan, dan pengalaman secara lisan atau melalui berbagai media.','Mengenali simbol, bunyi, gambar, atau bentuk awal yang bermakna.','Mengelompokkan benda berdasarkan warna, bentuk, ukuran, atau ciri lain.','Mengenali pola, urutan, jumlah, dan konsep bilangan dalam kegiatan bermain.','Mengamati, bertanya, mencoba, dan menceritakan hasil eksplorasi sains.','Menggunakan alat dan bahan sederhana untuk membuat atau membangun sesuatu.','Mengekspresikan ide melalui musik, gerak, gambar, bentuk, atau karya seni.']}
+};
+let crActiveTab='e1';
+function crKey(){return [val('crStudent'),val('crYear'),val('crSemester')].join('|')}
+function getCR(){return db.curriculumReports.find(x=>x.key===crKey())||{key:crKey(),studentId:val('crStudent'),year:val('crYear'),semester:val('crSemester'),elements:{},p5:{theme:'',dimension:'',description:'',photos:[]},growth:{height:'',weight:'',head:'',sick:0,permission:0,alpa:0},teacherNotes:''}}
+function renderCRTab(){document.querySelectorAll('[data-crtab]').forEach(b=>b.classList.toggle('active',b.dataset.crtab===crActiveTab));let r=getCR();let target=$('crEditor');
+ if(CR_ELEMENTS[crActiveTab]){let e=CR_ELEMENTS[crActiveTab],data=r.elements[crActiveTab]||{scores:{},description:'',photos:[]};target.innerHTML=`<h3>${e.title}</h3><p class="cr-muted">Pilih satu capaian untuk setiap tujuan pembelajaran. Pilih “Tidak Dinilai” bila belum diajarkan pada semester ini.</p>${e.tp.map((t,i)=>`<div class="cr-tp"><div class="cr-tp-title">${i+1}. ${esc(t)}</div><div class="cr-pills">${[['BB','BB'],['MB','MB'],['BSH','BSH'],['BSB','BSB'],['NA','Tidak Dinilai']].map(([v,l])=>`<label><input type="radio" name="cr_${crActiveTab}_${i}" value="${v}" ${data.scores?.[i]===v?'checked':''}>${l}</label>`).join('')}</div></div>`).join('')}<div class="row"><button class="btn yellow" type="button" onclick="generateCRDescription('${crActiveTab}')">✨ Buat Deskripsi Otomatis</button></div><div class="field" style="margin-top:10px"><label>Narasi capaian (dapat diedit manual)</label><textarea id="crDesc" placeholder="Tuliskan deskripsi berdasarkan pengamatan autentik guru...">${esc(data.description||'')}</textarea></div>${crPhotoMarkup(data.photos,crActiveTab)}`;
+ }else if(crActiveTab==='p5'){let p=r.p5||{};target.innerHTML=`<h3>Projek Penguatan Profil Pelajar Pancasila dan Rahmatan Lil Alamin (P5RA)</h3><div class="field"><label>Tema / Judul Projek</label><input id="p5Theme" value="${esc(p.theme)}" placeholder="Contoh: Aku Sayang Lingkungan"></div><div class="field"><label>Dimensi / Nilai Rahmatan Lil Alamin</label><textarea id="p5Dimension" placeholder="Tuliskan dimensi atau nilai yang dikembangkan">${esc(p.dimension)}</textarea></div><div class="field"><label>Deskripsi Capaian Projek</label><textarea id="p5Description" placeholder="Ceritakan proses dan capaian anak dalam projek">${esc(p.description)}</textarea></div>${crPhotoMarkup(p.photos,'p5')}`;
+ }else{let g=r.growth||{};target.innerHTML=`<h3>Data Pelengkap Wali Kelas</h3><div class="grid"><div class="field col-4"><label>Tinggi badan (cm)</label><input id="crHeight" type="number" min="0" step="0.1" value="${esc(g.height)}"></div><div class="field col-4"><label>Berat badan (kg)</label><input id="crWeight" type="number" min="0" step="0.1" value="${esc(g.weight)}"></div><div class="field col-4"><label>Lingkar kepala (cm)</label><input id="crHead" type="number" min="0" step="0.1" value="${esc(g.head)}"></div><div class="field col-4"><label>Sakit (hari)</label><input id="crSick" type="number" min="0" value="${esc(g.sick??0)}"></div><div class="field col-4"><label>Izin (hari)</label><input id="crPermission" type="number" min="0" value="${esc(g.permission??0)}"></div><div class="field col-4"><label>Tanpa keterangan (hari)</label><input id="crAlpa" type="number" min="0" value="${esc(g.alpa??0)}"></div></div><div class="field"><label>Catatan Guru / Rekomendasi untuk Orang Tua</label><textarea id="crTeacherNotes" placeholder="Pesan motivasi dan saran stimulasi di rumah...">${esc(r.teacherNotes||'')}</textarea></div>`;}
+}
+function crPhotoMarkup(photos,slot){photos=photos||[];return `<div class="field"><label>Foto dokumentasi kegiatan (maksimal 2 foto, otomatis dikompres)</label><div class="cr-photo-grid">${[0,1].map(i=>{let ph=photos[i]||{};return `<div class="cr-photo"><b>Foto ${i+1}</b><input type="file" accept="image/*" id="crPhoto_${slot}_${i}" onchange="handleCRPhoto(event,'${slot}',${i})">${ph.data?`<img src="${ph.data}" alt="Dokumentasi ${i+1}">`:''}<div class="field"><label>Keterangan foto</label><input id="crCaption_${slot}_${i}" value="${esc(ph.caption||'')}" placeholder="Keterangan singkat (opsional)"></div>${ph.data?`<button type="button" class="btn small red" onclick="removeCRPhoto('${slot}',${i})">Hapus foto</button>`:''}</div>`}).join('')}</div></div>`}
+function crCollectVisible(){let r=getCR();if(CR_ELEMENTS[crActiveTab]){let data=r.elements[crActiveTab]||{scores:{},description:'',photos:[]};CR_ELEMENTS[crActiveTab].tp.forEach((_,i)=>{let v=document.querySelector(`input[name="cr_${crActiveTab}_${i}"]:checked`);if(v)data.scores[i]=v.value;else delete data.scores[i]});data.description=$('crDesc')?.value||'';data.photos=[0,1].map(i=>({...((data.photos||[])[i]||{}),caption:$('crCaption_'+crActiveTab+'_'+i)?.value||''}));r.elements[crActiveTab]=data;
+ }else if(crActiveTab==='p5'){r.p5={theme:$('p5Theme')?.value||'',dimension:$('p5Dimension')?.value||'',description:$('p5Description')?.value||'',photos:[0,1].map(i=>({...((r.p5?.photos||[])[i]||{}),caption:$('crCaption_p5_'+i)?.value||''}))};
+ }else{r.growth={height:$('crHeight')?.value||'',weight:$('crWeight')?.value||'',head:$('crHead')?.value||'',sick:+($('crSick')?.value||0),permission:+($('crPermission')?.value||0),alpa:+($('crAlpa')?.value||0)};r.teacherNotes=$('crTeacherNotes')?.value||'';}return r}
+function crStoreCurrent(){let r=crCollectVisible(),i=db.curriculumReports.findIndex(x=>x.key===r.key);if(i>=0)db.curriculumReports[i]=r;else db.curriculumReports.push(r);return r}
+function loadCurriculumReport(force=false){if(!$('crStudent').value)return;crStoreCurrentIfSafe();let existing=db.curriculumReports.find(x=>x.key===crKey());if(!existing){crActiveTab='e1';}renderCRTab()}
+function crStoreCurrentIfSafe(){if(!val('crStudent')||!$('crEditor').innerHTML)return;try{crStoreCurrent()}catch(e){}}
+function switchCRTab(tab){crStoreCurrentIfSafe();crActiveTab=tab;renderCRTab()}
+function generateCRDescription(el){crStoreCurrentIfSafe();let r=getCR(),d=r.elements[el]||{scores:{},photos:[]},s=student(val('crStudent')),name=s?.panggilan||s?.nama||'Ananda',tp=CR_ELEMENTS[el].tp;let good=[],support=[];tp.forEach((t,i)=>{let v=d.scores?.[i];if(v==='BSB'||v==='BSH')good.push(t.toLowerCase());if(v==='MB'||v==='BB')support.push(t.toLowerCase())});let out=[];if(good.length)out.push(`Ananda ${name} menunjukkan perkembangan ${Object.values(d.scores||{}).includes('BSB')?'yang sangat baik':'sesuai harapan'} dalam ${good.join('; ')}.`);if(support.length)out.push(`Dengan bimbingan dan stimulasi berkelanjutan di rumah maupun sekolah, Ananda ${name} terus berlatih dalam ${support.join('; ')}.`);if(!out.length)out.push(`Ananda ${name} belum memiliki TP yang dinilai pada elemen ini. Guru dapat melengkapi deskripsi setelah kegiatan pembelajaran dan pengamatan.`);$('crDesc').value=out.join('\n\n');}
+function compressCRImage(file){return new Promise((resolve,reject)=>{if(!file.type.startsWith('image/'))return reject(new Error('Pilih file gambar.'));let reader=new FileReader();reader.onerror=reject;reader.onload=()=>{let img=new Image();img.onerror=reject;img.onload=()=>{let scale=Math.min(1,600/img.width),w=Math.round(img.width*scale),h=Math.round(img.height*scale),c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(img,0,0,w,h);resolve(c.toDataURL('image/jpeg',0.7))};img.src=reader.result};reader.readAsDataURL(file)})}
+async function handleCRPhoto(ev,slot,index){let file=ev.target.files?.[0];if(!file)return;try{let data=await compressCRImage(file);crStoreCurrentIfSafe();let r=getCR(),obj=slot==='p5'?r.p5:(r.elements[slot]||{scores:{},description:'',photos:[]});obj.photos=obj.photos||[];obj.photos[index]={...(obj.photos[index]||{}),data,caption:$('crCaption_'+slot+'_'+index)?.value||''};if(slot==='p5')r.p5=obj;else r.elements[slot]=obj;let ix=db.curriculumReports.findIndex(x=>x.key===r.key);if(ix>=0)db.curriculumReports[ix]=r;else db.curriculumReports.push(r);renderCRTab();alert('Foto berhasil dikompres dan ditambahkan.')}catch(e){alert('Foto tidak dapat diproses. Coba gunakan file gambar lain.')}}
+function removeCRPhoto(slot,index){crStoreCurrentIfSafe();let r=getCR(),obj=slot==='p5'?r.p5:(r.elements[slot]||{photos:[]});obj.photos=obj.photos||[];obj.photos[index]={caption:''};if(slot==='p5')r.p5=obj;else r.elements[slot]=obj;let ix=db.curriculumReports.findIndex(x=>x.key===r.key);if(ix>=0)db.curriculumReports[ix]=r;renderCRTab()}
+function saveCurriculumReport(){if(!val('crStudent')){alert('Pilih peserta didik terlebih dahulu.');return}let r=crStoreCurrent();saveDB();alert('Penilaian Kurikulum Merdeka RA berhasil disimpan.');}
+function initCR(){populateSelect('crStudent');$('crYear').value=val('filterTahun')||db.school.tahun||'';$('crSemester').value=val('filterSemester')||db.school.semester||'Semester 1';document.querySelectorAll('[data-crtab]').forEach(b=>b.addEventListener('click',()=>switchCRTab(b.dataset.crtab)));$('crStudent').addEventListener('change',()=>{crActiveTab='e1';renderCRTab()});$('crYear').addEventListener('change',()=>{crActiveTab='e1';renderCRTab()});$('crSemester').addEventListener('change',()=>{crActiveTab='e1';renderCRTab()});renderCRTab()}
+function renderCurriculumPrint(sid,year,sem){let r=db.curriculumReports.find(x=>x.studentId===sid&&x.year===year&&x.semester===sem);if(!r){$('rCurriculum').innerHTML='<p>Belum ada penilaian Kurikulum Merdeka RA untuk periode ini.</p>'; $('rGrowth').innerHTML='—';$('rTeacherNotes').textContent='—';return}
+ const photoHTML=photos=>(photos||[]).filter(x=>x?.data).map(x=>`<figure><img src="${x.data}" alt="Dokumentasi kegiatan"><figcaption>${esc(x.caption||'')}</figcaption></figure>`).join('');
+ $('rCurriculum').innerHTML=['e1','e2','e3'].map(k=>{let d=r.elements?.[k]||{};let title=CR_ELEMENTS[k].title;let assessed=Object.entries(d.scores||{}).filter(([i,v])=>v&&v!=='NA').map(([i,v])=>`<li>${esc(CR_ELEMENTS[k].tp[+i]||'Tujuan Pembelajaran')} — <b>${esc(v)}</b></li>`).join('');return `<div class="cr-report-block"><h4>${esc(title)}</h4><p>${esc(d.description||'Belum ada deskripsi.')}</p>${assessed?`<details><summary>Ringkasan ketercapaian TP</summary><ul>${assessed}</ul></details>`:''}<div class="cr-report-photos">${photoHTML(d.photos)}</div></div>`}).join('')+`<div class="cr-report-block"><h4>Projek Penguatan Profil Pelajar Pancasila dan Rahmatan Lil Alamin (P5RA)</h4><p><b>Tema/Judul:</b> ${esc(r.p5?.theme||'—')}</p><p><b>Dimensi/Nilai Rahmatan Lil Alamin:</b> ${esc(r.p5?.dimension||'—')}</p><p><b>Deskripsi capaian projek:</b> ${esc(r.p5?.description||'—')}</p><div class="cr-report-photos">${photoHTML(r.p5?.photos)}</div></div>`;
+ let g=r.growth||{};$('rGrowth').innerHTML=`<table class="report-table"><tr><th>Tinggi Badan</th><th>Berat Badan</th><th>Lingkar Kepala</th></tr><tr><td>${esc(g.height||'—')} cm</td><td>${esc(g.weight||'—')} kg</td><td>${esc(g.head||'—')} cm</td></tr></table>`;$('rTeacherNotes').textContent=r.teacherNotes||'—';$('rAttendance').innerHTML=`<table class="report-table"><tr><th>Sakit</th><th>Izin</th><th>Tanpa Keterangan</th></tr><tr><td>${g.sick??0} hari</td><td>${g.permission??0} hari</td><td>${g.alpa??0} hari</td></tr></table>`;
+}
+// Extend the existing renderer and selectors without removing legacy records.
+const _renderSelectsOriginal=renderSelects;
+renderSelects=function(){_renderSelectsOriginal();if($('crStudent')){let old=$('crStudent').value;populateSelect('crStudent',old);if(!$('crYear').value)$('crYear').value=val('filterTahun')||db.school.tahun||'';if(!$('crSemester').value)$('crSemester').value=val('filterSemester')||'Semester 1';}};
+const _renderAllOriginal=renderAll;
+renderAll=function(){_renderAllOriginal();if($('crStudent')&&!$('crStudent').value&&db.students.length)populateSelect('crStudent');};
+initCR();
+</script></body></html>
