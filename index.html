@@ -348,7 +348,33 @@ function printStudentIdentity(id) {
         @media print {
           button { display: none; }
         }
-      </style>
+      
+/* Bingkai rapor anak: warna gender diterapkan juga pada lembar cetak. */
+body[data-gender="L"]{--frame:#78bce8;--frame-soft:#eaf6ff;--frame-accent:#3989bd;--frame-heading:#e4f3ff;--frame-shadow:#b9def5}
+body[data-gender="P"]{--frame:#e6a4c5;--frame-soft:#fff0f7;--frame-accent:#c56f9b;--frame-heading:#ffe8f2;--frame-shadow:#f4c9dc}
+.report-paper{border-color:var(--frame)!important;outline-color:var(--frame)!important;background:#fff;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+.report-page{border:5px solid var(--frame)!important;outline:2px solid var(--frame-shadow)!important;outline-offset:-12px!important;border-radius:17px!important;background:#fff!important;overflow:hidden;position:relative;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+.report-page .report-section h3{background:var(--frame-heading)!important;border:1.5px solid var(--frame)!important;border-left:5px solid var(--frame-accent)!important;border-radius:8px!important;color:var(--ink)!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+.report-page .report-table thead th{background:var(--frame-heading)!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+.report-category-row td{background:var(--frame-soft)!important;border-top:2px solid var(--frame)!important;color:var(--frame-accent)!important}
+.report-evaluation{border-color:var(--frame)!important;border-left-color:var(--frame-accent)!important;background:var(--frame-soft)!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+/* Ilustrasi alat belajar menjadi bingkai samping pada setiap halaman rapor. */
+.report-page:before,.report-page:after{position:absolute;top:24px;bottom:24px;width:25px;display:flex;align-items:center;justify-content:space-around;flex-direction:column;white-space:pre;line-height:1.7;font-size:17px;z-index:5;pointer-events:none;opacity:.96}
+.report-page:before{content:"📚\A ✏️\A ⭐\A 🖍️\A 📖\A ✂️\A 🖌️";left:8px}
+.report-page:after{content:"🛩️\A 🌈\A 🖍️\A ✏️\A ⭐\A 📚\A 🎨";right:8px}
+.report-page{padding-left:48px!important;padding-right:48px!important}
+.report-page .report-head{border-bottom:4px double var(--frame-accent)!important}
+.report-title{background:var(--frame-soft);border:1.5px dashed var(--frame);border-radius:12px;padding:9px 6px;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+.report-page .report-category-row td{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+@media print{
+ html,body{print-color-adjust:exact!important;-webkit-print-color-adjust:exact!important}
+ .report-page{border:5px solid var(--frame)!important;outline:2px solid var(--frame-shadow)!important;border-radius:17px!important;padding:22px 43px!important;background:#fff!important;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+ .report-page:before,.report-page:after{display:flex!important;opacity:1!important;font-size:16px!important;line-height:2.2!important}
+ .report-page .report-section h3,.report-page .report-table thead th,.report-title,.report-evaluation,.report-category-row td{print-color-adjust:exact!important;-webkit-print-color-adjust:exact!important}
+ .report-page .report-section{break-inside:avoid;page-break-inside:avoid}
+}
+
+</style>
     </head>
 
     <body>
