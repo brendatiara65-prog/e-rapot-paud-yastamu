@@ -91,6 +91,58 @@ body[data-gender="P"] .report-paper:before,body[data-gender="P"] .report-paper:a
 #hafalanCategoryTabs button{border-radius:999px!important;border:1px solid #e5d8ef!important;background:#fff!important;padding:9px 14px!important;font-weight:800}
 #hafalanCategoryTabs button.active{background:#f5cce0!important;border-color:#efb7d2!important;color:#593d59}
 
+
+/* PLAYFUL PLAY GROUP THEME: ilustrasi alat belajar, bingkai doodle, dan animasi lembut */
+.report-page{
+ --doodle-bg:var(--frame-soft);
+ border:7px solid var(--frame)!important;
+ border-radius:25px!important;
+ outline:2px dashed var(--frame-accent)!important;
+ outline-offset:-15px!important;
+ background-color:#fff!important;
+ background-image:
+  radial-gradient(circle at 12px 12px,var(--frame-shadow) 2px,transparent 2.8px),
+  radial-gradient(circle at calc(100% - 12px) calc(100% - 12px),var(--frame-shadow) 2px,transparent 2.8px);
+ background-size:24px 24px,24px 24px;
+ padding-left:57px!important;padding-right:57px!important;
+}
+.report-page:before,.report-page:after{
+ top:58px!important;bottom:58px!important;width:34px!important;
+ font-size:22px!important;line-height:2.35!important;
+ text-shadow:0 2px 0 #fff,0 0 5px #fff;
+ filter:drop-shadow(0 2px 1px #00000012);
+}
+.report-page:before{left:8px!important;content:"📚\A ✏️\A ⭐\A 🖍️\A 📖\A ✂️\A 🖌️\A 🌼"!important}
+.report-page:after{right:8px!important;content:"🛩️\A 🌈\A 🖍️\A ✏️\A ⭐\A 📚\A 🎨\A 🧸"!important}
+.kid-doodles{position:absolute;inset:0;pointer-events:none;z-index:4;overflow:hidden}
+.kid-doodles .doodle{position:absolute;display:grid;place-items:center;width:39px;height:39px;border-radius:14px;background:var(--frame-soft);border:2px solid var(--frame);box-shadow:0 3px 0 var(--frame-shadow);font-size:23px;}
+.kid-doodles .book{top:10px;left:47px;transform:rotate(-10deg)}
+.kid-doodles .plane{top:10px;right:47px;transform:rotate(8deg)}
+.kid-doodles .pencil{bottom:12px;left:47px;transform:rotate(-13deg)}
+.kid-doodles .crayon{bottom:12px;right:47px;transform:rotate(12deg)}
+.kid-doodles .star{top:48%;left:7px;width:29px;height:29px;font-size:17px;border-radius:50%}
+.kid-doodles .rainbow{top:48%;right:7px;width:29px;height:29px;font-size:17px;border-radius:50%}
+.kid-doodles .scissors{top:25%;left:7px;width:28px;height:28px;font-size:16px;border-radius:50%}
+.kid-doodles .paint{top:25%;right:7px;width:28px;height:28px;font-size:16px;border-radius:50%}
+.report-page .report-section h3{border-radius:12px!important;padding:9px 12px!important;box-shadow:0 2px 0 var(--frame-shadow);}
+.report-page .report-title{border:2px dashed var(--frame-accent)!important;border-radius:16px!important;box-shadow:0 3px 0 var(--frame-shadow);}
+.report-page .report-table{border:2px solid var(--frame)!important;border-radius:10px;overflow:hidden}
+.report-page .report-table th{border-color:var(--frame)!important}
+.report-page .report-table td{border-color:var(--frame-shadow)!important}
+.report-page .report-evaluation{border:2px dashed var(--frame-accent)!important;border-radius:15px!important;box-shadow:0 3px 0 var(--frame-shadow);}
+@keyframes stickerBob{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -5px;rotate:3deg}}
+@media screen{
+ .kid-doodles .doodle{animation:stickerBob 3.8s ease-in-out infinite}
+ .kid-doodles .plane{animation-delay:.4s}.kid-doodles .rainbow{animation-delay:.8s}.kid-doodles .crayon{animation-delay:1.2s}
+ .report-page{box-shadow:0 12px 28px #5b47721c;margin-bottom:24px}
+}
+@media print{
+ .report-page{border:7px solid var(--frame)!important;outline:2px dashed var(--frame-accent)!important;outline-offset:-15px!important;border-radius:25px!important;padding:28px 50px!important;background-color:#fff!important;print-color-adjust:exact!important;-webkit-print-color-adjust:exact!important}
+ .kid-doodles .doodle{animation:none!important;box-shadow:0 2px 0 var(--frame-shadow)!important;print-color-adjust:exact!important;-webkit-print-color-adjust:exact!important}
+ .report-page:before,.report-page:after{display:flex!important;font-size:20px!important;line-height:2.3!important}
+}
+@media(prefers-reduced-motion:reduce){.kid-doodles .doodle{animation:none!important}}
+
 </style><script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script><style>
 .report-page{position:relative;background:#fff;border:5px double #3f3445;outline:1px solid #3f3445;outline-offset:-12px;padding:27px;margin:0 0 18px;min-height:275mm;color:#17121b;break-inside:avoid;page-break-inside:avoid}
 .report-page:last-child{margin-bottom:0}
@@ -169,9 +221,9 @@ body[data-gender="P"] .report-paper:before,body[data-gender="P"] .report-paper:a
 <div class="card" style="margin-top:15px"><h3>Riwayat Keikutsertaan</h3><div class="tablewrap"><table><thead><tr><th>Anak</th><th>Kegiatan</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="activitiesTable"></tbody></table></div></div></section>
 <section id="page-absensi" class="page"><div class="pagehead"><div><h2>Rekap Kehadiran</h2><p class="sub">Masukkan jumlah hari sakit, izin, dan tanpa keterangan.</p></div></div><div class="card"><div class="grid"><div class="field col-4"><label>Peserta didik</label><select id="attStudent" class="control"></select></div><div class="field col-4"><label>Sakit (hari)</label><input id="attSakit" type="number" min="0" value="0"></div><div class="field col-4"><label>Izin (hari)</label><input id="attIzin" type="number" min="0" value="0"></div><div class="field col-4"><label>Tanpa keterangan (hari)</label><input id="attAlpa" type="number" min="0" value="0"></div></div><button class="btn pink" onclick="saveAttendance()">Simpan Kehadiran</button></div><div class="card" style="margin-top:15px"><div class="tablewrap"><table><thead><tr><th>Anak</th><th>Sakit</th><th>Izin</th><th>Tanpa keterangan</th><th>Aksi</th></tr></thead><tbody id="attendanceTable"></tbody></table></div></div></section>
 <section id="page-rapor" class="page"><div class="pagehead no-print"><div><h2>Preview & Cetak Rapor</h2><p class="sub">Periksa hasil sebelum mencetak atau menyimpan sebagai PDF.</p></div></div><div class="card no-print"><div class="grid"><div class="field col-4"><label>Pilih peserta didik</label><select id="reportStudent" class="control"></select></div><div class="field col-4"><label>Tahun pelajaran</label><input id="reportYear" class="control"></div><div class="field col-4"><label>Semester</label><select id="reportSemester" class="control"><option>Semester 1</option><option>Semester 2</option></select></div></div><div class="row"><button class="btn pink" onclick="renderReport()">Perbarui Preview</button><button class="btn blue" onclick="window.print()">🖨️ Cetak / Simpan PDF</button></div><p class="hint">Pada jendela cetak, pilih ukuran kertas F4/Folio jika tersedia, lalu pilih printer atau “Save as PDF”.</p></div><div id="reportPlaceholder" class="notice no-print">Pilih peserta didik lalu klik Perbarui Preview.</div><div id="reportPaper" class="report-paper hidden"><div class="watermark" id="reportWatermark">PAUD YASTAMU</div><div class="report-content">
-<div class="report-page report-page-1"><div class="report-head"><div style="font-size:11px;font-weight:bold">LAPORAN PERKEMBANGAN ANAK USIA DINI</div><h2 id="rSchool">PAUD YASTAMU</h2><p id="rAddress"></p><p id="rNpsn"></p></div><div class="report-title">LAPORAN PERKEMBANGAN PESERTA DIDIK<br><span id="rPeriod" style="font-size:12px;font-weight:normal"></span></div><div class="report-section"><h3>IDENTITAS PESERTA DIDIK</h3><div id="rIdentity"></div></div><div class="report-section"><h3>A. CAPAIAN PEMBELAJARAN KURIKULUM MERDEKA PLAY GROUP</h3><div id="rCurriculum"></div><div id="rAssessments" class="hidden"></div></div></div>
-<div class="report-page report-page-2"><div class="report-section"><h3>B. HAFALAN, DINUL ISLAM, DAN BAHASA</h3><table class="report-table"><thead><tr><th>Materi</th><th>Predikat</th></tr></thead><tbody id="rHafalan"></tbody></table><div class="report-evaluation"><b>Catatan Evaluasi Hafalan</b><p id="rHafalanEvaluation"></p></div></div><div class="report-section"><h3>C. KEGIATAN / EKSTRAKURIKULER</h3><table class="report-table"><thead><tr><th>Nama Kegiatan</th><th>Keikutsertaan</th></tr></thead><tbody id="rKegiatan"></tbody></table><div class="report-evaluation"><b>Catatan Evaluasi Kegiatan</b><p id="rKegiatanEvaluation"></p></div></div></div>
-<div class="report-page report-page-3"><div class="report-section"><h3>D. PERTUMBUHAN FISIK</h3><div id="rGrowth"></div></div><div class="report-section"><h3>E. CATATAN GURU / REKOMENDASI</h3><div id="rTeacherNotes"></div></div><div class="report-section"><h3>F. REFLEKSI ORANG TUA / WALI</h3><div class="parent-reflection"><div class="reflection-line"></div><div class="reflection-line"></div><div class="reflection-line"></div><div class="reflection-line"></div></div></div><div class="report-section"><h3>KEHADIRAN</h3><div id="rAttendance"></div></div><div class="signatures"><div>Mengetahui,<br>Orang Tua / Wali<div class="space"></div><div class="signature-name">________________________</div></div><div id="rTeacherCity">Guru Kelas<div class="space"></div><div class="signature-name" id="rTeacher">________________________</div></div><div id="rHeadCity">Kepala Sekolah<div class="space"></div><div class="signature-name" id="rHead">________________________</div><div id="rNipSign"></div></div></div></div>
+<div class="report-page report-page-1"><div class="kid-doodles" aria-hidden="true"><span class="doodle book">📚</span><span class="doodle plane">🛩️</span><span class="doodle pencil">✏️</span><span class="doodle crayon">🖍️</span><span class="doodle star">⭐</span><span class="doodle rainbow">🌈</span><span class="doodle scissors">✂️</span><span class="doodle paint">🎨</span></div><div class="report-head"><div style="font-size:11px;font-weight:bold">LAPORAN PERKEMBANGAN ANAK USIA DINI</div><h2 id="rSchool">PAUD YASTAMU</h2><p id="rAddress"></p><p id="rNpsn"></p></div><div class="report-title">LAPORAN PERKEMBANGAN PESERTA DIDIK<br><span id="rPeriod" style="font-size:12px;font-weight:normal"></span></div><div class="report-section"><h3>IDENTITAS PESERTA DIDIK</h3><div id="rIdentity"></div></div><div class="report-section"><h3>A. CAPAIAN PEMBELAJARAN KURIKULUM MERDEKA PLAY GROUP</h3><div id="rCurriculum"></div><div id="rAssessments" class="hidden"></div></div></div>
+<div class="report-page report-page-2"><div class="kid-doodles" aria-hidden="true"><span class="doodle book">📚</span><span class="doodle plane">🛩️</span><span class="doodle pencil">✏️</span><span class="doodle crayon">🖍️</span><span class="doodle star">⭐</span><span class="doodle rainbow">🌈</span><span class="doodle scissors">✂️</span><span class="doodle paint">🎨</span></div><div class="report-section"><h3>B. HAFALAN, DINUL ISLAM, DAN BAHASA</h3><table class="report-table"><thead><tr><th>Materi</th><th>Predikat</th></tr></thead><tbody id="rHafalan"></tbody></table><div class="report-evaluation"><b>Catatan Evaluasi Hafalan</b><p id="rHafalanEvaluation"></p></div></div><div class="report-section"><h3>C. KEGIATAN / EKSTRAKURIKULER</h3><table class="report-table"><thead><tr><th>Nama Kegiatan</th><th>Keikutsertaan</th></tr></thead><tbody id="rKegiatan"></tbody></table><div class="report-evaluation"><b>Catatan Evaluasi Kegiatan</b><p id="rKegiatanEvaluation"></p></div></div></div>
+<div class="report-page report-page-3"><div class="kid-doodles" aria-hidden="true"><span class="doodle book">📚</span><span class="doodle plane">🛩️</span><span class="doodle pencil">✏️</span><span class="doodle crayon">🖍️</span><span class="doodle star">⭐</span><span class="doodle rainbow">🌈</span><span class="doodle scissors">✂️</span><span class="doodle paint">🎨</span></div><div class="report-section"><h3>D. PERTUMBUHAN FISIK</h3><div id="rGrowth"></div></div><div class="report-section"><h3>E. CATATAN GURU / REKOMENDASI</h3><div id="rTeacherNotes"></div></div><div class="report-section"><h3>F. REFLEKSI ORANG TUA / WALI</h3><div class="parent-reflection"><div class="reflection-line"></div><div class="reflection-line"></div><div class="reflection-line"></div><div class="reflection-line"></div></div></div><div class="report-section"><h3>KEHADIRAN</h3><div id="rAttendance"></div></div><div class="signatures"><div>Mengetahui,<br>Orang Tua / Wali<div class="space"></div><div class="signature-name">________________________</div></div><div id="rTeacherCity">Guru Kelas<div class="space"></div><div class="signature-name" id="rTeacher">________________________</div></div><div id="rHeadCity">Kepala Sekolah<div class="space"></div><div class="signature-name" id="rHead">________________________</div><div id="rNipSign"></div></div></div></div>
 </div></div></section>
 <section id="page-backup" class="page"><div class="pagehead"><div><h2>Backup & Pemulihan Data</h2><p class="sub">Simpan salinan data agar dapat dipulihkan di kemudian hari.</p></div></div><div class="notice"><b>Penting:</b> data utama disimpan di browser ini. File backup diperlukan untuk memindahkan data ke browser/perangkat lain atau jika data browser terhapus. Foto siswa ikut dimasukkan ke backup.</div><div class="grid"><div class="card col-6"><h3>Unduh backup</h3><p>Ekspor semua data sekolah, siswa, orang tua, aspek, penilaian, hafalan, kegiatan, dan absensi menjadi file JSON.</p><button class="btn pink" onclick="exportBackup()">⬇ Unduh Backup JSON</button></div><div class="card col-6"><h3>Pulihkan backup</h3><p>Pilih file JSON hasil ekspor aplikasi ini. Data yang ada akan diganti dengan data dari file.</p><div class="field"><label>File backup (.json)</label><input type="file" id="backupFile" accept=".json,application/json"></div><button class="btn yellow" onclick="importBackup()">⬆ Pulihkan Data</button></div><div class="card col-12"><h3>Data tersimpan di browser ini</h3><p id="storageInfo"></p><button class="btn red" onclick="clearAllData()">Hapus Semua Data Aplikasi</button><p class="hint">Tindakan hapus semua data tidak dapat dibatalkan. Unduh backup sebelum melanjutkan.</p></div></div></section>
 </main></div><div class="footer">E-RAPOT PAUD YASTAMU · Pengembang Brenda Tiara</div>
