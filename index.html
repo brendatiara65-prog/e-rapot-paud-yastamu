@@ -261,6 +261,27 @@ body[data-gender="P"] .report-paper:before,body[data-gender="P"] .report-paper:a
  .signatures{margin-top:24px}.watermark{color:#ddd;opacity:.3}
 }
 </style>
+
+<style id="print-readability-revision">
+/* Cetak lebih terbaca: ukuran huruf dinaikkan sekitar dua tingkat dan warna diperkuat. */
+@media print {
+  body { font-size: 12px !important; line-height: 1.5 !important; color: #111 !important; }
+  .report-page, .report-paper, .report-content { font-size: 12px !important; line-height: 1.5 !important; color: #111 !important; }
+  .report-head h2, .report-school-text h2 { font-size: 22px !important; }
+  .report-kicker { font-size: 13px !important; }
+  .report-province, .report-school-text p, .report-level { font-size: 15px !important; }
+  .report-student-report-title, .report-title { font-size: 14px !important; }
+  .report-section h3 { font-size: 16px !important; background: #ffd6e8 !important; color: #17121b !important; border: 1px solid #d94f91 !important; }
+  .report-table, .report-table th, .report-table td { font-size: 11px !important; line-height: 1.45 !important; }
+  .report-table th { background: #cfeaff !important; color: #102b49 !important; border-color: #367db7 !important; }
+  .report-table td { border-color: #555 !important; }
+  .report-evaluation, .cr-report-block { font-size: 12px !important; line-height: 1.5 !important; }
+  .report-evaluation b, .cr-report-block h4 { font-size: 13px !important; }
+  .signatures { font-size: 12px !important; }
+  .report-section h3, .report-table th, .report-evaluation { print-color-adjust: exact !important; -webkit-print-color-adjust: exact !important; }
+}
+</style>
+
 </head>
 <body>
 
@@ -430,11 +451,7 @@ function printStudentIdentity(id) {
     return;
   }
 
-  const namaLembagaCetak = [student.kelas || "Play Group", school.nama || ""]
-    .map(x => String(x).trim())
-    .filter(Boolean)
-    .join(" ")
-    .toLocaleUpperCase("id-ID");
+  const namaLembagaCetak = String(school.nama || "").trim().toLocaleUpperCase("id-ID");
 
   printWindow.document.write(`
     <!DOCTYPE html>
@@ -450,19 +467,19 @@ function printStudentIdentity(id) {
         body {
           font-family: Arial, sans-serif;
           color: #222;
-          font-size: 11px;
+          font-size: 13px;
         }
 
         h2 {
           text-align: center;
-          font-size: 17px;
+          font-size: 19px;
           margin-bottom: 18px;
         }
 
         h3 {
-          font-size: 12px;
+          font-size: 14px;
           margin: 15px 0 6px;
-          background: #eee;
+          background: #ffd6e8;
           padding: 6px;
         }
 
